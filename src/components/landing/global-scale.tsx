@@ -23,7 +23,7 @@ export function GlobalScale() {
   ];
 
   return (
-    <section className="bg-[#0a2540] py-20 sm:py-24 md:py-32 diagonal-container -mt-10 relative z-30 text-white border-t border-white/5">
+    <section className="bg-[#0a2540] py-20 sm:py-24 md:py-32 diagonal-container -mt-10 relative z-30 text-white border-t border-white/5 overflow-x-hidden">
       <div className="diagonal-content-reverse max-w-[1080px] mx-auto px-6 md:px-4 lg:px-0">
         <div className="grid lg:grid-cols-2 gap-8 md:gap-12 lg:gap-16 relative">
           <div className="relative z-10">
@@ -45,7 +45,7 @@ export function GlobalScale() {
               ))}
             </div>
           </div>
-          <div className="hidden lg:block relative h-full min-h-[400px]">
+          <div className="hidden lg:block relative h-full min-h-[400px] overflow-hidden">
             <div className="absolute inset-0 opacity-20">
               <div className="w-full h-full bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-white/20 via-[#0a2540] to-[#0a2540]"></div>
               <div
@@ -53,7 +53,7 @@ export function GlobalScale() {
                 style={{
                   backgroundImage: "radial-gradient(#fff 1px, transparent 1px)",
                   backgroundSize: "40px 40px",
-                  transform: "perspective(1000px) rotateX(60deg) translateY(-100px) scale(1.5)",
+                  transform: "perspective(1000px) rotateX(60deg) translateY(-100px) scale(1.2)",
                 }}
               ></div>
             </div>

@@ -284,14 +284,14 @@
   height: 110%;
   background-color: #ffffff;
   background-image: 
-    radial-gradient(farthest-corner at 0% 0%, #7a7adb 0%, transparent 50%), 
-    radial-gradient(farthest-corner at 90% 80%, #90e0ff 0%, transparent 40%), 
-    radial-gradient(farthest-corner at 10% 40%, #ffcb57 0%, transparent 40%), 
-    radial-gradient(farthest-corner at 50% 30%, #ff5858 0%, transparent 50%), 
-    radial-gradient(farthest-corner at 70% 0%, #d47aff 0%, transparent 50%);
+    radial-gradient(farthest-corner at 0% 0%, #635bff 0%, transparent 50%), 
+    radial-gradient(farthest-corner at 90% 80%, rgba(10, 37, 64, 0.15) 0%, transparent 40%), 
+    radial-gradient(farthest-corner at 10% 40%, rgba(99, 91, 255, 0.2) 0%, transparent 40%), 
+    radial-gradient(farthest-corner at 50% 30%, rgba(66, 84, 102, 0.1) 0%, transparent 50%), 
+    radial-gradient(farthest-corner at 70% 0%, rgba(99, 91, 255, 0.25) 0%, transparent 50%);
   transform: skewY(-8deg);
   transform-origin: top left;
-  filter: blur(40px) saturate(140%);
+  filter: blur(40px) saturate(120%);
   opacity: 0.75;
 }
 
