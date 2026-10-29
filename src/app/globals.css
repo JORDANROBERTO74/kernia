@@ -29,19 +29,19 @@
     --card-foreground: 222.2 84% 4.9%;
     --popover: 0 0% 100%;
     --popover-foreground: 222.2 84% 4.9%;
-    --primary: 221.2 83.2% 53.3%;
-    --primary-foreground: 210 40% 98%;
-    --secondary: 210 40% 96.1%;
-    --secondary-foreground: 222.2 47.4% 11.2%;
-    --muted: 210 40% 96.1%;
-    --muted-foreground: 215.4 16.3% 46.9%;
-    --accent: 210 40% 96.1%;
-    --accent-foreground: 222.2 47.4% 11.2%;
+    --primary: 162 100% 35%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 160 20% 96%;
+    --secondary-foreground: 165 40% 12%;
+    --muted: 160 20% 96%;
+    --muted-foreground: 210 8% 34%;
+    --accent: 160 70% 94%;
+    --accent-foreground: 165 60% 12%;
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 210 40% 98%;
     --border: 214.3 31.8% 91.4%;
     --input: 214.3 31.8% 91.4%;
-    --ring: 221.2 83.2% 53.3%;
+    --ring: 162 100% 35%;
     --radius: 0.5rem;
     --sidebar-background: 0 0% 98%;
     --sidebar-foreground: 240 5.3% 26.1%;
@@ -65,19 +65,19 @@
     --card-foreground: 210 40% 98%;
     --popover: 222.2 84% 4.9%;
     --popover-foreground: 210 40% 98%;
-    --primary: 217.2 91.2% 59.8%;
-    --primary-foreground: 222.2 47.4% 11.2%;
-    --secondary: 217.2 32.6% 17.5%;
+    --primary: 162 84% 42%;
+    --primary-foreground: 165 60% 8%;
+    --secondary: 200 10% 16%;
     --secondary-foreground: 210 40% 98%;
-    --muted: 217.2 32.6% 17.5%;
-    --muted-foreground: 215 20.2% 65.1%;
-    --accent: 217.2 32.6% 17.5%;
+    --muted: 200 10% 16%;
+    --muted-foreground: 200 10% 68%;
+    --accent: 200 10% 16%;
     --accent-foreground: 210 40% 98%;
     --destructive: 0 62.8% 30.6%;
     --destructive-foreground: 210 40% 98%;
     --border: 217.2 32.6% 17.5%;
     --input: 217.2 32.6% 17.5%;
-    --ring: 224.3 76.3% 48%;
+    --ring: 162 84% 42%;
     --sidebar-background: 240 5.9% 10%;
     --sidebar-foreground: 240 4.8% 95.9%;
     --sidebar-primary: 224.3 76.3% 48%;
@@ -94,95 +94,6 @@
   }
 }
 
-/* Chatwoot CSS Variables */
-:root {
-  /* Default values */
-  --chatwoot-primary: #667eea;
-  --chatwoot-secondary: #764ba2;
-  --chatwoot-text: #ffffff;
-  --chatwoot-background: #ffffff;
-  --chatwoot-accent: #10b981;
-}
-
-/* Custom styles for Chatwoot widget */
-.woot-widget-bubble {
-  background: var(--chatwoot-primary) !important;
-  /* Fallback for older browsers */
-  box-shadow: 0 4px 20px rgba(102, 126, 234, 0.4) !important;
-  /* Modern browsers with color-mix support */
-  box-shadow: 0 4px 20px
-    color-mix(in srgb, var(--chatwoot-primary) 40%, transparent) !important;
-}
-
-.woot-widget-bubble:hover {
-  /* Fallback */
-  filter: brightness(0.9);
-  /* Modern browsers */
-  background: color-mix(in srgb, var(--chatwoot-primary) 90%, black) !important;
-}
-
-/* Chat header */
-.woot--bubble-holder .header {
-  background: linear-gradient(
-    135deg,
-    var(--chatwoot-primary) 0%,
-    var(--chatwoot-secondary) 100%
-  ) !important;
-}
-
-/* User messages */
-.woot--bubble-holder .message.user .bubble {
-  background-color: var(--chatwoot-primary) !important;
-}
-
-/* Agent messages */
-.woot--bubble-holder .message.agent .bubble {
-  background-color: var(--chatwoot-background) !important;
-  color: var(--chatwoot-text) !important;
-}
-
-/* Buttons and interactive elements */
-.woot--bubble-holder button,
-.woot--bubble-holder .button {
-  background-color: var(--chatwoot-accent) !important;
-}
-
-/* Unread message counter */
-.woot-widget-bubble.unread-notification::after {
-  background: var(--chatwoot-accent) !important;
-}
-
-/* Chat input */
-.woot--bubble-holder .woot--input-container {
-  border-color: var(--chatwoot-primary) !important;
-}
-
-.woot--bubble-holder .woot--input-container:focus-within {
-  border-color: var(--chatwoot-accent) !important;
-  /* Fallback */
-  box-shadow: 0 0 0 2px rgba(16, 185, 129, 0.2) !important;
-  /* Modern browsers */
-  box-shadow: 0 0 0 2px
-    color-mix(in srgb, var(--chatwoot-accent) 20%, transparent) !important;
-}
-
-/* Custom scrollbar */
-.woot--bubble-holder ::-webkit-scrollbar {
-  width: 6px;
-}
-
-.woot--bubble-holder ::-webkit-scrollbar-track {
-  background: var(--chatwoot-background);
-}
-
-.woot--bubble-holder ::-webkit-scrollbar-thumb {
-  background: var(--chatwoot-primary);
-  border-radius: 3px;
-}
-
-.woot--bubble-holder ::-webkit-scrollbar-thumb:hover {
-  background: var(--chatwoot-accent);
-}
 
 @layer base {
   * {
@@ -284,15 +195,15 @@
   height: 110%;
   background-color: #ffffff;
   background-image: 
-    radial-gradient(farthest-corner at 0% 0%, #635bff 0%, transparent 50%), 
-    radial-gradient(farthest-corner at 90% 80%, rgba(10, 37, 64, 0.15) 0%, transparent 40%), 
-    radial-gradient(farthest-corner at 10% 40%, rgba(99, 91, 255, 0.2) 0%, transparent 40%), 
-    radial-gradient(farthest-corner at 50% 30%, rgba(66, 84, 102, 0.1) 0%, transparent 50%), 
-    radial-gradient(farthest-corner at 70% 0%, rgba(99, 91, 255, 0.25) 0%, transparent 50%);
+    radial-gradient(farthest-corner at 0% 0%, rgba(0, 179, 126, 0.55) 0%, transparent 50%), 
+    radial-gradient(farthest-corner at 90% 80%, rgba(16, 20, 24, 0.12) 0%, transparent 40%), 
+    radial-gradient(farthest-corner at 10% 40%, rgba(0, 179, 126, 0.16) 0%, transparent 40%), 
+    radial-gradient(farthest-corner at 50% 30%, rgba(73, 80, 87, 0.08) 0%, transparent 50%), 
+    radial-gradient(farthest-corner at 70% 0%, rgba(76, 215, 246, 0.22) 0%, transparent 50%);
   transform: skewY(-8deg);
   transform-origin: top left;
-  filter: blur(40px) saturate(120%);
-  opacity: 0.75;
+  filter: blur(40px) saturate(110%);
+  opacity: 0.5;
 }
 
 .diagonal-container {

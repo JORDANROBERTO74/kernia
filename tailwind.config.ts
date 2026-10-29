@@ -24,7 +24,7 @@ const config = {
         "gradient-conic":
           "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
         "mesh-gradient":
-          "radial-gradient(circle at 15% 50%, rgba(255, 255, 255, 0.4), transparent 25%), radial-gradient(circle at 85% 30%, rgba(99, 91, 255, 0.2), transparent 25%)",
+          "radial-gradient(circle at 15% 50%, rgba(255, 255, 255, 0.4), transparent 25%), radial-gradient(circle at 85% 30%, rgba(0, 179, 126, 0.2), transparent 25%)",
       },
       borderRadius: {
         lg: "var(--radius)",
@@ -36,11 +36,11 @@ const config = {
       },
       boxShadow: {
         glass:
-          "0 13px 27px -5px rgba(50,50,93,0.25), 0 8px 16px -8px rgba(0,0,0,0.3)",
-        card: "0 50px 100px -20px rgba(50,50,93,0.25), 0 30px 60px -30px rgba(0,0,0,0.3)",
-        subtle: "0 2px 5px -1px rgba(50,50,93,0.25), 0 1px 3px -1px rgba(0,0,0,0.3)",
+          "0 13px 27px -5px rgba(16,20,24,0.18), 0 8px 16px -8px rgba(16,20,24,0.22)",
+        card: "0 50px 100px -20px rgba(16,20,24,0.18), 0 30px 60px -30px rgba(16,20,24,0.22)",
+        subtle: "0 2px 5px -1px rgba(16,20,24,0.18), 0 1px 3px -1px rgba(16,20,24,0.22)",
         floating:
-          "0 30px 60px -12px rgba(50,50,93,0.25), 0 18px 36px -18px rgba(0,0,0,0.3), 0 -12px 36px -8px rgba(0,0,0,0.025)",
+          "0 30px 60px -12px rgba(16,20,24,0.18), 0 18px 36px -18px rgba(16,20,24,0.22), 0 -12px 36px -8px rgba(0,0,0,0.025)",
       },
       colors: {
         border: "hsl(var(--border))",
@@ -86,8 +86,8 @@ const config = {
           border: "hsl(var(--sidebar-border))",
           ring: "hsl(var(--sidebar-ring))",
         },
-        "slate-text": "#425466",
-        "slate-dark": "#0a2540",
+        "slate-text": "#495057",
+        "slate-dark": "#101418",
       },
       keyframes: {
         "accordion-down": {

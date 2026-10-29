@@ -77,7 +77,7 @@ export function Navigation() {
             onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
             className="flex items-center gap-2 transition-opacity hover:opacity-80"
           >
-            <span className="font-black text-2xl tracking-tighter text-white drop-shadow-sm">keyonehub</span>
+            <span className="font-black text-2xl tracking-tight text-[#101418]">kernia</span>
           </button>
 
           {/* Desktop Navigation */}
@@ -86,7 +86,7 @@ export function Navigation() {
               <button
                 key={item.name}
                 onClick={() => handleNavClick(item.href)}
-                className="group flex items-center gap-1 text-white hover:text-white/80 font-semibold transition-colors duration-200 text-base"
+                className="group flex items-center gap-1 text-[#101418] hover:text-[#101418]/70 font-semibold transition-colors duration-200 text-base"
               >
                 {item.name}
                 {item.hasDropdown && (
@@ -98,10 +98,10 @@ export function Navigation() {
 
           {/* Desktop CTA Buttons */}
           <div className="hidden md:flex items-center gap-4">
-            <a className="text-white font-semibold hover:text-white/80 transition-colors mr-2 text-base flex items-center" href="#">
+            <a className="text-[#101418] font-semibold hover:text-[#101418]/70 transition-colors mr-2 text-base flex items-center" href="#">
               Sign in <ChevronRight className="text-sm ml-1 pt-0.5" />
             </a>
-            <a className="inline-flex items-center justify-center px-4 py-1.5 text-sm font-semibold rounded-full text-[#0a2540] bg-white hover:text-[#0a2540]/80 transition-all shadow-md hover:shadow-lg group" href="#">
+            <a className="inline-flex items-center justify-center px-4 py-1.5 text-sm font-semibold rounded-full text-white bg-[#101418] hover:bg-[#101418]/90 transition-all shadow-md hover:shadow-lg group" href="#">
               Contact sales <ChevronRight className="text-sm ml-1 group-hover:translate-x-0.5 transition-transform" />
             </a>
           </div>
@@ -120,7 +120,7 @@ export function Navigation() {
                   <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-primary/10 text-primary">
                     <Sparkles className="h-6 w-6" />
                   </div>
-                  <span className="text-xl font-bold">KeyOneHub</span>
+                  <span className="text-xl font-bold">Kernia</span>
                 </div>
 
                 <nav className="flex flex-col gap-2">
