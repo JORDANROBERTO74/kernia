@@ -2,7 +2,7 @@
 
 import React from "react";
 import Link from "next/link";
-import { CardChip } from "../commons/cardChip";
+
 import { Zap, BarChart3, Ticket, Package, ChevronRight, Workflow } from "lucide-react";
 
 function ModularDiagram() {
@@ -211,7 +211,7 @@ function ModularDiagram() {
                       {rowIndex === 1 && colIndex === 2 ? (
                         <div
                           key={`line-vertical-${rowIndex}-${colIndex}`}
-                          className="absolute w-0.5 bg-[#635bff]"
+                          className="absolute w-0.5 bg-[#00b37e]"
                           style={{
                             top: `${((startY + rowIndex * (moduleSize + gapPx)) / containerHeight) * 100}%`,
                             left: `${((startX + colIndex * (moduleSize + gapPx) + moduleSize / 2) / containerWidth) * 100}%`,
@@ -225,7 +225,7 @@ function ModularDiagram() {
                         <>
                           <div
                             key={`line-vertical-${rowIndex}-${colIndex}`}
-                            className="absolute w-0.5 bg-[#635bff]"
+                            className="absolute w-0.5 bg-[#00b37e]"
                             style={{
                               top: `${((startY + rowIndex * (moduleSize + gapPx)) / containerHeight) * 100}%`,
                               left: `${((startX + colIndex * (moduleSize + gapPx) + moduleSize / 2) / containerWidth) * 100}%`,
@@ -236,7 +236,7 @@ function ModularDiagram() {
                           {/* Horizontal line in the center of vertical line */}
                           <div
                             key={`line-horizontal-${rowIndex}-${colIndex}`}
-                            className="absolute h-0.5 bg-[#635bff]"
+                            className="absolute h-0.5 bg-[#00b37e]"
                             style={{
                               top: `${((startY + rowIndex * (moduleSize + gapPx) + moduleSize / 2) / containerHeight) * 100}%`,
                               left: `calc(${((startX + colIndex * (moduleSize + gapPx) + moduleSize / 1.35) / containerWidth) * 100}%)`,
@@ -256,16 +256,16 @@ function ModularDiagram() {
                     >
                       {moduleName ? (
                         <div className="flex flex-col items-center justify-center w-full h-full">
-                          <div className={`${isAlwaysHover ? 'text-[#635bff]' : 'text-slate-600'} group-hover:text-[#635bff] transition-colors duration-300 ease-out flex items-center justify-center`}>
+                          <div className={`${isAlwaysHover ? 'text-[#00b37e]' : 'text-slate-600'} group-hover:text-[#00b37e] transition-colors duration-300 ease-out flex items-center justify-center`}>
                             {getIcon(moduleName)}
                           </div>
-                          <span className={`text-[10px] font-semibold text-[#0a2540] mt-1.5 capitalize whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity duration-300 ease-out h-0 group-hover:h-[14px] overflow-hidden ${isAlwaysHover ? 'opacity-100 h-[14px]' : ''}`}>
+                          <span className={`text-[10px] font-semibold text-[#101418] mt-1.5 capitalize whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity duration-300 ease-out h-0 group-hover:h-[14px] overflow-hidden ${isAlwaysHover ? 'opacity-100 h-[14px]' : ''}`}>
                             {moduleName}
                           </span>
                         </div>
                       ) : (
                         // Default icon for modules without names
-                        <div className={`w-3 h-3 bg-slate-400 rounded-full group-hover:bg-[#635bff] transition-colors duration-150 ${isAlwaysHover ? 'bg-[#635bff]' : ''}`}></div>
+                        <div className={`w-3 h-3 bg-slate-400 rounded-full group-hover:bg-[#00b37e] transition-colors duration-150 ${isAlwaysHover ? 'bg-[#00b37e]' : ''}`}></div>
                       )}
                     </div>
                   ) : null}
@@ -285,21 +285,21 @@ export function Features() {
       icon: Zap,
       title: "Automation Gallery",
       description: "Pre-built workflows for IT operations.",
-      color: "#635bff",
+      color: "#00b37e",
       link: "#",
     },
     {
       icon: BarChart3,
       title: "Dashboard Analytics",
       description: "Interactive data visualization and insights.",
-      color: "#00d4ff",
+      color: "#4cd7f6",
       link: "#",
     },
     {
       icon: Ticket,
       title: "Ticket Queue",
       description: "Intelligent ticket management and routing.",
-      color: "#0a2540",
+      color: "#101418",
       link: "#",
     },
     {
@@ -312,57 +312,57 @@ export function Features() {
   ];
 
   return (
-    <section id="platform" className="bg-[#f6f9fc] py-24 diagonal-container -mt-10 relative z-10">
+    <section id="platform" className="bg-[#f5f7f8] py-24 diagonal-container -mt-10 relative z-10">
       <div className="diagonal-content-reverse max-w-[1080px] mx-auto px-6 md:px-4 lg:px-0">
         <div className="mb-16 flex flex-col lg:flex-row gap-8 lg:gap-12 items-start">
           <div className="flex-1">
-            <h2 className="text-[#635bff] font-bold text-sm uppercase tracking-wide mb-3">
+            <h2 className="text-[#00b37e] font-bold text-sm uppercase tracking-wide mb-3">
               Modular solutions
             </h2>
-            <h3 className="text-3xl md:text-4xl font-bold tracking-tight text-[#0a2540] mb-6">
+            <h3 className="text-3xl md:text-4xl font-bold tracking-tight text-[#101418] mb-6">
               A fully integrated suite of automation tools.
             </h3>
-            <p className="text-lg text-[#425466] max-w-2xl leading-relaxed">
-              We bring together everything that&apos;s required to automate IT operations, analyze support tickets, and optimize workflows. KeyOneHub&apos;s products power automation for support teams, IT departments, operations teams, and enterprises managing complex technical infrastructure.
+            <p className="text-lg text-[#495057] max-w-2xl leading-relaxed">
+              We bring together everything that&apos;s required to automate IT operations, analyze support tickets, and optimize workflows. Kernia&apos;s products power automation for support teams, IT departments, operations teams, and enterprises managing complex technical infrastructure.
             </p>
           </div>
           <div className="hidden lg:block flex-1 w-full lg:w-auto lg:min-w-[400px]">
             <ModularDiagram />
           </div>
         </div>
-        {/* Automation Gallery Feature - KeyOneHub-style hero layout */}
+        {/* Automation Gallery Feature - Kernia-style hero layout */}
         <div className="mb-16 flex flex-col lg:flex-row gap-12 items-center">
           {/* Left side - Text content */}
           <div className="flex-[0.4]">
             <div className="flex items-center gap-2 mb-4">
-              <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-purple-500 to-indigo-500 flex items-center justify-center">
+              <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-emerald-500 to-teal-500 flex items-center justify-center">
                 <Zap className="text-white text-sm" />
               </div>
-              <span className="font-bold text-[#0a2540]">Automation Gallery</span>
+              <span className="font-bold text-[#101418]">Automation Gallery</span>
             </div>
-            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold tracking-tight text-[#0a2540] mb-6">
+            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold tracking-tight text-[#101418] mb-6">
               Pre-built workflows for IT operations
             </h2>
-            <p className="text-lg text-[#425466] mb-8 leading-relaxed">
+            <p className="text-lg text-[#495057] mb-8 leading-relaxed">
               Choose from hundreds of ready-to-use automation templates. Deploy workflows for ticket routing, server management, database operations, and more with just a few clicks.
             </p>
             <Link
               href="#"
-              className="inline-flex items-center px-6 py-3 bg-[#635bff] text-white font-semibold rounded-lg hover:bg-[#5851ea] transition-colors mb-8"
+              className="inline-flex items-center px-6 py-3 bg-[#00b37e] text-white font-semibold rounded-lg hover:bg-[#00a372] transition-colors mb-8"
             >
               Explore Automations{" "}
               <ChevronRight className="text-sm ml-2" />
             </Link>
             <div className="mt-8">
-              <p className="text-sm font-semibold text-[#0a2540] mb-3">See also</p>
+              <p className="text-sm font-semibold text-[#101418] mb-3">See also</p>
               <div className="space-y-2">
-                <Link href="#" className="block text-[#635bff] hover:text-[#5851ea] transition-colors text-sm">
+                <Link href="#" className="block text-[#00b37e] hover:text-[#00a372] transition-colors text-sm">
                   Workflow Builder for creating custom automations
                 </Link>
-                <Link href="#" className="block text-[#635bff] hover:text-[#5851ea] transition-colors text-sm">
+                <Link href="#" className="block text-[#00b37e] hover:text-[#00a372] transition-colors text-sm">
                   MCP Servers for connecting external systems
                 </Link>
-                <Link href="#" className="block text-[#635bff] hover:text-[#5851ea] transition-colors text-sm">
+                <Link href="#" className="block text-[#00b37e] hover:text-[#00a372] transition-colors text-sm">
                   My Automations for managing your workflows
                 </Link>
               </div>
@@ -377,7 +377,7 @@ export function Features() {
                 <div className="w-10 h-10 bg-blue-100 rounded-lg flex items-center justify-center mb-3">
                   <Zap className="text-blue-600 text-lg" />
                 </div>
-                <h3 className="font-bold text-sm text-[#0a2540] mb-1">Server Reload</h3>
+                <h3 className="font-bold text-sm text-[#101418] mb-1">Server Reload</h3>
                 <p className="text-xs text-slate-600 mb-3">Automatically restart servers on failure</p>
                 <div className="flex items-center gap-2">
                   <span className="text-[10px] px-2 py-0.5 bg-green-100 text-green-700 rounded-full font-semibold">Popular</span>
@@ -387,10 +387,10 @@ export function Features() {
 
               {/* Automation Card 2 */}
               <div className="bg-white rounded-xl shadow-lg p-4 border border-slate-200">
-                <div className="w-10 h-10 bg-purple-100 rounded-lg flex items-center justify-center mb-3">
-                  <Workflow className="text-purple-600 text-lg" />
+                <div className="w-10 h-10 bg-emerald-100 rounded-lg flex items-center justify-center mb-3">
+                  <Workflow className="text-emerald-600 text-lg" />
                 </div>
-                <h3 className="font-bold text-sm text-[#0a2540] mb-1">Ticket Routing</h3>
+                <h3 className="font-bold text-sm text-[#101418] mb-1">Ticket Routing</h3>
                 <p className="text-xs text-slate-600 mb-3">Route tickets to the right team automatically</p>
                 <div className="flex items-center gap-2">
                   <span className="text-[10px] px-2 py-0.5 bg-blue-100 text-blue-700 rounded-full font-semibold">New</span>
@@ -403,7 +403,7 @@ export function Features() {
                 <div className="w-10 h-10 bg-green-100 rounded-lg flex items-center justify-center mb-3">
                   <Package className="text-green-600 text-lg" />
                 </div>
-                <h3 className="font-bold text-sm text-[#0a2540] mb-1">DB Backup</h3>
+                <h3 className="font-bold text-sm text-[#101418] mb-1">DB Backup</h3>
                 <p className="text-xs text-slate-600 mb-3">Schedule automated database backups</p>
                 <div className="flex items-center gap-2">
                   <span className="text-[10px] text-slate-500">Database</span>
@@ -415,7 +415,7 @@ export function Features() {
                 <div className="w-10 h-10 bg-orange-100 rounded-lg flex items-center justify-center mb-3">
                   <BarChart3 className="text-orange-600 text-lg" />
                 </div>
-                <h3 className="font-bold text-sm text-[#0a2540] mb-1">SSL Renewal</h3>
+                <h3 className="font-bold text-sm text-[#101418] mb-1">SSL Renewal</h3>
                 <p className="text-xs text-slate-600 mb-3">Auto-renew SSL certificates before expiry</p>
                 <div className="flex items-center gap-2">
                   <span className="text-[10px] text-slate-500">Security</span>
@@ -425,7 +425,7 @@ export function Features() {
           </div>
         </div>
 
-        {/* Dashboard Analytics Feature - KeyOneHub-style hero layout */}
+        {/* Dashboard Analytics Feature - Kernia-style hero layout */}
         <div className="mb-16 flex flex-col lg:flex-row gap-12 items-center">
           {/* Left side - Text content */}
           <div className="flex-[0.4]">
@@ -433,31 +433,31 @@ export function Features() {
               <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-cyan-500 to-blue-500 flex items-center justify-center">
                 <BarChart3 className="text-white text-sm" />
               </div>
-              <span className="font-bold text-[#0a2540]">Dashboard Analytics</span>
+              <span className="font-bold text-[#101418]">Dashboard Analytics</span>
             </div>
-            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold tracking-tight text-[#0a2540] mb-6">
+            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold tracking-tight text-[#101418] mb-6">
               Visualize and analyze your data
             </h2>
-            <p className="text-lg text-[#425466] mb-8 leading-relaxed">
+            <p className="text-lg text-[#495057] mb-8 leading-relaxed">
               Create interactive dashboards with Graphic Walker, explore data visually, and generate insights without writing SQL. Connect multiple data sources and build custom visualizations.
             </p>
             <Link
               href="#"
-              className="inline-flex items-center px-6 py-3 bg-[#635bff] text-white font-semibold rounded-lg hover:bg-[#5851ea] transition-colors mb-8"
+              className="inline-flex items-center px-6 py-3 bg-[#00b37e] text-white font-semibold rounded-lg hover:bg-[#00a372] transition-colors mb-8"
             >
               Explore Dashboards{" "}
               <ChevronRight className="text-sm ml-2" />
             </Link>
             <div className="mt-8">
-              <p className="text-sm font-semibold text-[#0a2540] mb-3">See also</p>
+              <p className="text-sm font-semibold text-[#101418] mb-3">See also</p>
               <div className="space-y-2">
-                <Link href="#" className="block text-[#635bff] hover:text-[#5851ea] transition-colors text-sm">
+                <Link href="#" className="block text-[#00b37e] hover:text-[#00a372] transition-colors text-sm">
                   Graphic Walker for exploratory data analysis
                 </Link>
-                <Link href="#" className="block text-[#635bff] hover:text-[#5851ea] transition-colors text-sm">
+                <Link href="#" className="block text-[#00b37e] hover:text-[#00a372] transition-colors text-sm">
                   Custom Charts with Chart.js and Recharts integration
                 </Link>
-                <Link href="#" className="block text-[#635bff] hover:text-[#5851ea] transition-colors text-sm">
+                <Link href="#" className="block text-[#00b37e] hover:text-[#00a372] transition-colors text-sm">
                   Data Sources for connecting Airbyte and MCP servers
                 </Link>
               </div>
@@ -469,10 +469,10 @@ export function Features() {
             <div className="bg-white rounded-xl shadow-lg p-6 border border-slate-200 w-full max-w-[400px] mx-auto lg:mx-0">
               {/* Dashboard header */}
               <div className="flex items-center justify-between mb-4 pb-4 border-b border-slate-200">
-                <h3 className="font-bold text-lg text-[#0a2540]">Support Metrics</h3>
+                <h3 className="font-bold text-lg text-[#101418]">Support Metrics</h3>
                 <div className="flex gap-2">
                   <button className="px-3 py-1 text-xs bg-slate-100 text-slate-600 rounded-lg hover:bg-slate-200">Today</button>
-                  <button className="px-3 py-1 text-xs bg-[#635bff] text-white rounded-lg">This Week</button>
+                  <button className="px-3 py-1 text-xs bg-[#00b37e] text-white rounded-lg">This Week</button>
                 </div>
               </div>
 
@@ -480,22 +480,22 @@ export function Features() {
               <div className="grid grid-cols-2 gap-4 mb-4">
                 <div className="bg-slate-50 rounded-lg p-3">
                   <p className="text-xs text-slate-600 mb-1">Tickets Processed</p>
-                  <p className="text-2xl font-bold text-[#0a2540]">1,247</p>
+                  <p className="text-2xl font-bold text-[#101418]">1,247</p>
                   <p className="text-xs text-green-600 mt-1">+12.5%</p>
                 </div>
                 <div className="bg-slate-50 rounded-lg p-3">
                   <p className="text-xs text-slate-600 mb-1">Avg Response</p>
-                  <p className="text-2xl font-bold text-[#0a2540]">2.4h</p>
+                  <p className="text-2xl font-bold text-[#101418]">2.4h</p>
                   <p className="text-xs text-green-600 mt-1">-45%</p>
                 </div>
                 <div className="bg-slate-50 rounded-lg p-3">
                   <p className="text-xs text-slate-600 mb-1">Automation Rate</p>
-                  <p className="text-2xl font-bold text-[#0a2540]">71.5%</p>
+                  <p className="text-2xl font-bold text-[#101418]">71.5%</p>
                   <p className="text-xs text-green-600 mt-1">+8.2%</p>
                 </div>
                 <div className="bg-slate-50 rounded-lg p-3">
                   <p className="text-xs text-slate-600 mb-1">Active Workflows</p>
-                  <p className="text-2xl font-bold text-[#0a2540]">47</p>
+                  <p className="text-2xl font-bold text-[#101418]">47</p>
                   <p className="text-xs text-slate-500 mt-1">No change</p>
                 </div>
               </div>
@@ -504,8 +504,8 @@ export function Features() {
               <div className="bg-slate-50 rounded-lg p-4 h-32 flex items-center justify-center border border-slate-200">
                 <div className="w-full h-full relative">
                   <svg className="w-full h-full" viewBox="0 0 200 100" preserveAspectRatio="none">
-                    <path d="M 0 80 Q 50 60 100 40 T 200 20" stroke="#635bff" strokeWidth="2" fill="none" />
-                    <path d="M 0 90 Q 50 70 100 50 T 200 30" stroke="#00d4ff" strokeWidth="2" fill="none" opacity="0.6" />
+                    <path d="M 0 80 Q 50 60 100 40 T 200 20" stroke="#00b37e" strokeWidth="2" fill="none" />
+                    <path d="M 0 90 Q 50 70 100 50 T 200 30" stroke="#4cd7f6" strokeWidth="2" fill="none" opacity="0.6" />
                   </svg>
                   <div className="absolute bottom-0 left-0 right-0 flex justify-between text-[10px] text-slate-500 px-2">
                     <span>Mon</span>
@@ -520,7 +520,7 @@ export function Features() {
           </div>
         </div>
 
-        {/* Ticket Queue Feature - KeyOneHub-style hero layout */}
+        {/* Ticket Queue Feature - Kernia-style hero layout */}
         <div className="mb-16 flex flex-col lg:flex-row gap-12 items-center">
           {/* Left side - Text content */}
           <div className="flex-[0.4]">
@@ -528,31 +528,31 @@ export function Features() {
               <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-blue-500 to-teal-500 flex items-center justify-center">
                 <Ticket className="text-white text-sm" />
               </div>
-              <span className="font-bold text-[#0a2540]">Ticket Queue</span>
+              <span className="font-bold text-[#101418]">Ticket Queue</span>
             </div>
-            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold tracking-tight text-[#0a2540] mb-6">
+            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold tracking-tight text-[#101418] mb-6">
               Intelligent ticket management and routing
             </h2>
-            <p className="text-lg text-[#425466] mb-8 leading-relaxed">
+            <p className="text-lg text-[#495057] mb-8 leading-relaxed">
               Automatically classify, prioritize, and route support tickets to the right team. Use AI to analyze ticket content and assign based on expertise, workload, and urgency.
             </p>
             <Link
               href="#"
-              className="inline-flex items-center px-6 py-3 bg-[#635bff] text-white font-semibold rounded-lg hover:bg-[#5851ea] transition-colors mb-8"
+              className="inline-flex items-center px-6 py-3 bg-[#00b37e] text-white font-semibold rounded-lg hover:bg-[#00a372] transition-colors mb-8"
             >
               Explore Ticket Queue{" "}
               <ChevronRight className="text-sm ml-2" />
             </Link>
             <div className="mt-8">
-              <p className="text-sm font-semibold text-[#0a2540] mb-3">See also</p>
+              <p className="text-sm font-semibold text-[#101418] mb-3">See also</p>
               <div className="space-y-2">
-                <Link href="#" className="block text-[#635bff] hover:text-[#5851ea] transition-colors text-sm">
+                <Link href="#" className="block text-[#00b37e] hover:text-[#00a372] transition-colors text-sm">
                   AI Classification for automatic ticket categorization
                 </Link>
-                <Link href="#" className="block text-[#635bff] hover:text-[#5851ea] transition-colors text-sm">
+                <Link href="#" className="block text-[#00b37e] hover:text-[#00a372] transition-colors text-sm">
                   Smart Routing for intelligent ticket assignment
                 </Link>
-                <Link href="#" className="block text-[#635bff] hover:text-[#5851ea] transition-colors text-sm">
+                <Link href="#" className="block text-[#00b37e] hover:text-[#00a372] transition-colors text-sm">
                   Ticket Analytics for performance insights
                 </Link>
               </div>
@@ -564,9 +564,9 @@ export function Features() {
             <div className="bg-white rounded-2xl shadow-lg border border-slate-200 w-full max-w-[400px] mx-auto lg:mx-0 overflow-hidden">
               {/* Header */}
               <div className="flex items-center justify-between p-4 border-b border-slate-200 bg-slate-50">
-                <h3 className="font-bold text-lg text-[#0a2540]">Support Queue</h3>
+                <h3 className="font-bold text-lg text-[#101418]">Support Queue</h3>
                 <div className="flex items-center gap-2">
-                  <span className="px-2 py-1 bg-[#635bff] text-white text-xs font-semibold rounded-full">24</span>
+                  <span className="px-2 py-1 bg-[#00b37e] text-white text-xs font-semibold rounded-full">24</span>
                 </div>
               </div>
 
@@ -579,7 +579,7 @@ export function Features() {
                     <div className="flex items-start gap-3 p-3 bg-red-50 border border-red-200 rounded-lg">
                       <div className="w-2 h-2 bg-red-500 rounded-full mt-2"></div>
                       <div className="flex-1">
-                        <p className="font-semibold text-sm text-[#0a2540]">#1247 Password Reset</p>
+                        <p className="font-semibold text-sm text-[#101418]">#1247 Password Reset</p>
                         <p className="text-xs text-slate-600 mt-1">Sarah Johnson • 5 min ago</p>
                         <span className="inline-block mt-2 px-2 py-0.5 bg-red-100 text-red-700 text-xs font-semibold rounded">Urgent</span>
                       </div>
@@ -594,7 +594,7 @@ export function Features() {
                     <div className="flex items-start gap-3 p-3 bg-blue-50 border border-blue-200 rounded-lg">
                       <div className="w-2 h-2 bg-blue-500 rounded-full mt-2"></div>
                       <div className="flex-1">
-                        <p className="font-semibold text-sm text-[#0a2540]">#1246 Server Error</p>
+                        <p className="font-semibold text-sm text-[#101418]">#1246 Server Error</p>
                         <p className="text-xs text-slate-600 mt-1">John Smith • 12 min ago</p>
                         <span className="inline-block mt-2 px-2 py-0.5 bg-blue-100 text-blue-700 text-xs font-semibold rounded">Assigned</span>
                       </div>
@@ -602,7 +602,7 @@ export function Features() {
                     <div className="flex items-start gap-3 p-3 bg-blue-50 border border-blue-200 rounded-lg">
                       <div className="w-2 h-2 bg-blue-500 rounded-full mt-2"></div>
                       <div className="flex-1">
-                        <p className="font-semibold text-sm text-[#0a2540]">#1245 Database Issue</p>
+                        <p className="font-semibold text-sm text-[#101418]">#1245 Database Issue</p>
                         <p className="text-xs text-slate-600 mt-1">Maria Garcia • 1h ago</p>
                         <span className="inline-block mt-2 px-2 py-0.5 bg-green-100 text-green-700 text-xs font-semibold rounded">Auto-resolved</span>
                       </div>
@@ -617,9 +617,9 @@ export function Features() {
                     <div className="flex items-start gap-3 p-3 bg-slate-50 border border-slate-200 rounded-lg">
                       <div className="w-2 h-2 bg-slate-400 rounded-full mt-2"></div>
                       <div className="flex-1">
-                        <p className="font-semibold text-sm text-[#0a2540]">#1244 Feature Request</p>
+                        <p className="font-semibold text-sm text-[#101418]">#1244 Feature Request</p>
                         <p className="text-xs text-slate-600 mt-1">David Lee • 2h ago</p>
-                        <span className="inline-block mt-2 px-2 py-0.5 bg-purple-100 text-purple-700 text-xs font-semibold rounded">Needs Review</span>
+                        <span className="inline-block mt-2 px-2 py-0.5 bg-emerald-100 text-emerald-700 text-xs font-semibold rounded">Needs Review</span>
                       </div>
                     </div>
                   </div>
@@ -629,7 +629,7 @@ export function Features() {
           </div>
         </div>
 
-        {/* Inventory Management Feature - KeyOneHub-style hero layout */}
+        {/* Inventory Management Feature - Kernia-style hero layout */}
         <div className="mb-16 flex flex-col lg:flex-row gap-12 items-center">
           {/* Left side - Text content */}
           <div className="flex-[0.4]">
@@ -637,31 +637,31 @@ export function Features() {
               <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-green-500 to-emerald-600 flex items-center justify-center">
                 <Package className="text-white text-sm" />
               </div>
-              <span className="font-bold text-[#0a2540]">Inventory Management</span>
+              <span className="font-bold text-[#101418]">Inventory Management</span>
             </div>
-            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold tracking-tight text-[#0a2540] mb-6">
+            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold tracking-tight text-[#101418] mb-6">
               Complete asset and inventory tracking
             </h2>
-            <p className="text-lg text-[#425466] mb-8 leading-relaxed">
+            <p className="text-lg text-[#495057] mb-8 leading-relaxed">
               Track IT assets, manage stock levels, handle purchase orders, and monitor inventory across multiple locations. Full lifecycle management from procurement to retirement.
             </p>
             <Link
               href="#"
-              className="inline-flex items-center px-6 py-3 bg-[#635bff] text-white font-semibold rounded-lg hover:bg-[#5851ea] transition-colors mb-8"
+              className="inline-flex items-center px-6 py-3 bg-[#00b37e] text-white font-semibold rounded-lg hover:bg-[#00a372] transition-colors mb-8"
             >
               Explore Inventory{" "}
               <ChevronRight className="text-sm ml-2" />
             </Link>
             <div className="mt-8">
-              <p className="text-sm font-semibold text-[#0a2540] mb-3">See also</p>
+              <p className="text-sm font-semibold text-[#101418] mb-3">See also</p>
               <div className="space-y-2">
-                <Link href="#" className="block text-[#635bff] hover:text-[#5851ea] transition-colors text-sm">
+                <Link href="#" className="block text-[#00b37e] hover:text-[#00a372] transition-colors text-sm">
                   Stock Items for tracking individual assets
                 </Link>
-                <Link href="#" className="block text-[#635bff] hover:text-[#5851ea] transition-colors text-sm">
+                <Link href="#" className="block text-[#00b37e] hover:text-[#00a372] transition-colors text-sm">
                   Purchase Orders for procurement workflows
                 </Link>
-                <Link href="#" className="block text-[#635bff] hover:text-[#5851ea] transition-colors text-sm">
+                <Link href="#" className="block text-[#00b37e] hover:text-[#00a372] transition-colors text-sm">
                   Build Orders for assembly and manufacturing
                 </Link>
               </div>
@@ -673,8 +673,8 @@ export function Features() {
             <div className="bg-white rounded-xl shadow-lg p-6 border border-slate-200 w-full max-w-[400px] mx-auto lg:mx-0">
               {/* Header */}
               <div className="flex items-center justify-between mb-4 pb-4 border-b border-slate-200">
-                <h3 className="font-bold text-lg text-[#0a2540]">IT Assets</h3>
-                <button className="px-3 py-1 text-xs bg-[#635bff] text-white rounded-lg font-semibold">+ Add Item</button>
+                <h3 className="font-bold text-lg text-[#101418]">IT Assets</h3>
+                <button className="px-3 py-1 text-xs bg-[#00b37e] text-white rounded-lg font-semibold">+ Add Item</button>
               </div>
 
               {/* Inventory items */}
@@ -684,7 +684,7 @@ export function Features() {
                     <Package className="text-blue-600 text-xl" />
                   </div>
                   <div className="flex-1">
-                    <p className="font-semibold text-sm text-[#0a2540]">Dell OptiPlex 7090</p>
+                    <p className="font-semibold text-sm text-[#101418]">Dell OptiPlex 7090</p>
                     <p className="text-xs text-slate-600">Desktop Computer</p>
                     <div className="flex items-center gap-2 mt-1">
                       <span className="text-xs px-2 py-0.5 bg-green-100 text-green-700 rounded-full font-semibold">In Stock</span>
@@ -694,11 +694,11 @@ export function Features() {
                 </div>
 
                 <div className="flex items-center gap-3 p-3 bg-slate-50 rounded-lg border border-slate-200">
-                  <div className="w-12 h-12 bg-purple-100 rounded-lg flex items-center justify-center">
-                    <Package className="text-purple-600 text-xl" />
+                  <div className="w-12 h-12 bg-emerald-100 rounded-lg flex items-center justify-center">
+                    <Package className="text-emerald-600 text-xl" />
                   </div>
                   <div className="flex-1">
-                    <p className="font-semibold text-sm text-[#0a2540]">HP EliteBook 840</p>
+                    <p className="font-semibold text-sm text-[#101418]">HP EliteBook 840</p>
                     <p className="text-xs text-slate-600">Laptop Computer</p>
                     <div className="flex items-center gap-2 mt-1">
                       <span className="text-xs px-2 py-0.5 bg-yellow-100 text-yellow-700 rounded-full font-semibold">Low Stock</span>
@@ -712,7 +712,7 @@ export function Features() {
                     <Package className="text-green-600 text-xl" />
                   </div>
                   <div className="flex-1">
-                    <p className="font-semibold text-sm text-[#0a2540]">Cisco Catalyst 9300</p>
+                    <p className="font-semibold text-sm text-[#101418]">Cisco Catalyst 9300</p>
                     <p className="text-xs text-slate-600">Network Switch</p>
                     <div className="flex items-center gap-2 mt-1">
                       <span className="text-xs px-2 py-0.5 bg-green-100 text-green-700 rounded-full font-semibold">In Stock</span>
@@ -733,19 +733,19 @@ export function Features() {
               className="group relative bg-white p-6 rounded-lg shadow-subtle hover:shadow-card hover:-translate-y-1 transition-all duration-300"
             >
               <div
-                className="absolute top-0 left-0 w-full h-1 bg-transparent group-hover:bg-[#635bff] transition-colors rounded-t-lg"
+                className="absolute top-0 left-0 w-full h-1 bg-transparent group-hover:bg-[#00b37e] transition-colors rounded-t-lg"
                 style={{ backgroundColor: feature.color }}
               ></div>
               <div className="mb-4" style={{ color: feature.color }}>
                 <feature.icon className="text-3xl" />
               </div>
-              <h4 className="text-lg font-bold text-[#0a2540] mb-2">{feature.title}</h4>
-              <p className="text-sm text-[#425466] leading-relaxed mb-4">
+              <h4 className="text-lg font-bold text-[#101418] mb-2">{feature.title}</h4>
+              <p className="text-sm text-[#495057] leading-relaxed mb-4">
                 {feature.description}
               </p>
               <Link
                 href={feature.link}
-                className="text-[#635bff] font-semibold text-sm flex items-center group-hover:text-[#0a2540] transition-colors"
+                className="text-[#00b37e] font-semibold text-sm flex items-center group-hover:text-[#101418] transition-colors"
               >
                 Start with {feature.title}{" "}
                 <ChevronRight className="text-sm ml-1" />

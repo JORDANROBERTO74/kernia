@@ -2,16 +2,11 @@
 
 import React, { useState, useEffect, useRef, useCallback } from "react";
 import Link from "next/link";
-import Image from "next/image";
-import { BMWLogo } from "../commons/bmw";
-import { AmazonLogo } from "../commons/amazon";
-import { MaerskLogo } from "../commons/maersk";
-import { TwilioLogo } from "../commons/twilio";
+import { ClientLogo } from "../commons/clientLogo";
 import { Zap, BarChart3, Ticket, Package, ChevronRight } from "lucide-react";
 
 type BrandData = {
   name: string;
-  image: string;
   metrics: {
     value: string;
     description: string[];
@@ -22,144 +17,135 @@ type BrandData = {
     color: string;
   }[];
   headline: string;
-  logoComponent: React.ComponentType<{ className?: string }>;
 };
 
 const BRAND_DATA: BrandData[] = [
   {
-    name: "Microsoft",
-    image: "/images/bmw.webp",
+    name: "Northwind",
     metrics: [
       {
-        value: "500K+",
+        value: "480K+",
         description: ["Support tickets processed", "monthly across teams"],
       },
       {
-        value: "75%",
+        value: "72%",
         description: ["Automation rate for", "routine IT operations"],
       },
     ],
     products: [
       {
         name: "Automation",
-        icon: "payments",
+        icon: "automation",
         color: "text-cyan-500",
       },
       {
         name: "Dashboards",
-        icon: "account_balance",
-        color: "text-purple-500",
+        icon: "dashboards",
+        color: "text-emerald-500",
       },
     ],
-    headline: "Learn why Microsoft chose KeyOneHub to automate IT operations and support",
-    logoComponent: BMWLogo,
+    headline: "Northwind automates first-line support across 14 distribution sites",
   },
   {
-    name: "IBM",
-    image: "/images/amazon.webp",
+    name: "Solaris",
     metrics: [
       {
-        value: "200+",
+        value: "210+",
         description: ["Systems integrated via", "Airbyte and MCP servers"],
       },
       {
-        value: "60%",
+        value: "58%",
         description: ["Reduction in manual", "ticket handling time"],
       },
     ],
     products: [
       {
         name: "Automation",
-        icon: "payments",
+        icon: "automation",
         color: "text-cyan-500",
       },
       {
         name: "Integrations",
-        icon: "account_balance",
-        color: "text-purple-500",
+        icon: "integrations",
+        color: "text-emerald-500",
       },
     ],
-    headline: "See how IBM streamlined IT operations with KeyOneHub automation",
-    logoComponent: AmazonLogo,
+    headline: "Solaris Health cut manual ticket handling by 58% in one quarter",
   },
   {
-    name: "Oracle",
-    image: "/images/maersk.webp",
+    name: "Alder",
     metrics: [
       {
-        value: "150+",
-        description: ["Countries with automated", "support operations"],
+        value: "12",
+        description: ["Regions with automated", "support operations"],
       },
       {
-        value: "2.5M+",
+        value: "1.8M+",
         description: ["Tickets processed annually", "with AI classification"],
       },
     ],
     products: [
       {
         name: "Automation",
-        icon: "payments",
+        icon: "automation",
         color: "text-cyan-500",
       },
       {
         name: "Ticket Queue",
-        icon: "account_balance",
-        color: "text-purple-500",
+        icon: "queue",
+        color: "text-emerald-500",
       },
     ],
-    headline: "See how Oracle scaled global IT support with KeyOneHub workflows",
-    logoComponent: MaerskLogo,
+    headline: "Alder Financial runs round-the-clock support with a leaner on-call rota",
   },
   {
-    name: "Twilio",
-    image: "/images/twilio.webp",
+    name: "Vantage",
     metrics: [
       {
-        value: "+65%",
+        value: "+61%",
         description: ["Improvement in ticket", "resolution efficiency"],
       },
       {
-        value: "-45%",
+        value: "-43%",
         description: ["Reduction in average", "response time"],
       },
     ],
     products: [
       {
         name: "Automation",
-        icon: "payments",
+        icon: "automation",
         color: "text-cyan-500",
       },
       {
-        name: "KeyOneHub Analytics",
+        name: "Kernia Analytics",
         icon: "analytics",
-        color: "text-pink-500",
+        color: "text-emerald-500",
       },
     ],
-    headline: "See how Twilio improved support efficiency by 65% with KeyOneHub",
-    logoComponent: TwilioLogo,
+    headline: "Vantage Retail resolved support tickets 43% faster with Kernia",
   },
 ];
 
 const BRAND_OVERLAYS: Record<string, { gradient: string; shadow: string; borderColor: string }> = {
-  Microsoft: {
-    gradient: "from-blue-900/30 via-blue-800/40 to-blue-900/60",
-    shadow: "rgba(30,58,138,0.4)",
-    borderColor: "border-blue-600",
+  Northwind: {
+    gradient: "from-slate-900/30 via-slate-800/40 to-slate-900/60",
+    shadow: "rgba(15,23,42,0.4)",
+    borderColor: "border-slate-600",
   },
-  IBM: {
-    gradient: "from-yellow-900/30 via-yellow-800/40 to-yellow-900/60",
-    shadow: "rgba(180,83,9,0.4)",
-    borderColor: "border-yellow-600",
+  Solaris: {
+    gradient: "from-emerald-900/30 via-emerald-800/40 to-emerald-900/60",
+    shadow: "rgba(6,78,59,0.4)",
+    borderColor: "border-emerald-600",
   },
-  Oracle: {
+  Alder: {
     gradient: "from-cyan-900/30 via-cyan-800/40 to-cyan-900/60",
     shadow: "rgba(14,116,144,0.4)",
     borderColor: "border-cyan-600",
   },
-  Twilio: {
-    gradient: "from-red-900/30 via-red-800/40 to-red-900/60",
-    shadow: "rgba(153,27,27,0.4)",
-    borderColor: "border-red-600",
+  Vantage: {
+    gradient: "from-teal-900/30 via-teal-800/40 to-teal-900/60",
+    shadow: "rgba(19,78,74,0.4)",
+    borderColor: "border-teal-600",
   },
 };
 
@@ -229,32 +215,32 @@ export function Enterprise() {
       <div className="diagonal-content-reverse max-w-[1080px] mx-auto px-6 md:px-4 lg:px-0">
         {/* Header Section - Top */}
         <div className="mb-16">
-          <h2 className="text-[#635bff] font-bold text-sm uppercase tracking-wide mb-3">
+          <h2 className="text-[#00b37e] font-bold text-sm uppercase tracking-wide mb-3">
             Enterprise reinvention
           </h2>
-          <h3 className="text-3xl md:text-4xl font-bold tracking-tight text-[#0a2540] mb-6">
+          <h3 className="text-3xl md:text-4xl font-bold tracking-tight text-[#101418] mb-6">
             Bring agility to your enterprise
           </h3>
-          <p className="text-lg text-[#425466] mb-8 leading-relaxed max-w-3xl">
+          <p className="text-lg text-[#495057] mb-8 leading-relaxed max-w-3xl">
             Quickly build great automation workflows with a{" "}
-            <Link href="#" className="text-[#635bff] hover:underline">
+            <Link href="#" className="text-[#00b37e] hover:underline">
               professional services team
             </Link>
             ,{" "}
-            <Link href="#" className="text-[#635bff] hover:underline">
+            <Link href="#" className="text-[#00b37e] hover:underline">
               certified partners
             </Link>
             , and{" "}
-            <Link href="#" className="text-[#635bff] hover:underline">
+            <Link href="#" className="text-[#00b37e] hover:underline">
               ServiceNow
             </Link>
             ,{" "}
-            <Link href="#" className="text-[#635bff] hover:underline">
+            <Link href="#" className="text-[#00b37e] hover:underline">
               Jira
             </Link>
             , and{" "}
-            <Link href="#" className="text-[#635bff] hover:underline">
-              KeyOneHub App Marketplace
+            <Link href="#" className="text-[#00b37e] hover:underline">
+              Kernia App Marketplace
             </Link>
             .
           </p>
@@ -262,9 +248,9 @@ export function Enterprise() {
           {/* CTA Button */}
           <Link
             href="#"
-            className="inline-flex items-center justify-center px-6 py-3 bg-[#635bff] text-white font-semibold rounded-lg hover:bg-[#5851ea] transition-colors"
+            className="inline-flex items-center justify-center px-6 py-3 bg-[#00b37e] text-white font-semibold rounded-lg hover:bg-[#00a372] transition-colors"
           >
-            Explore KeyOneHub for enterprises{" "}
+            Explore Kernia for enterprises{" "}
             <ChevronRight className="text-sm ml-2" />
           </Link>
         </div>
@@ -283,11 +269,11 @@ export function Enterprise() {
                 {selectedBrand.metrics.map((metric, index) => (
                   <div
                     key={index}
-                    className={`border-l-2 ${BRAND_OVERLAYS[selectedBrand.name]?.borderColor || "border-[#0a2540]"} pl-4`}
+                    className={`border-l-2 ${BRAND_OVERLAYS[selectedBrand.name]?.borderColor || "border-[#101418]"} pl-4`}
                   >
-                    <p className="text-2xl font-bold text-[#0a2540] mb-1">{metric.value}</p>
+                    <p className="text-2xl font-bold text-[#101418] mb-1">{metric.value}</p>
                     {metric.description.map((line, lineIndex) => (
-                      <p key={lineIndex} className="text-base text-[#425466]">
+                      <p key={lineIndex} className="text-base text-[#495057]">
                         {line}
                       </p>
                     ))}
@@ -296,9 +282,9 @@ export function Enterprise() {
 
                 {/* Products Used */}
                 <div
-                  className={`border-l-2 ${BRAND_OVERLAYS[selectedBrand.name]?.borderColor || "border-[#0a2540]"} pl-4`}
+                  className={`border-l-2 ${BRAND_OVERLAYS[selectedBrand.name]?.borderColor || "border-[#101418]"} pl-4`}
                 >
-                  <p className="text-lg text-[#425466] mb-3 font-bold">Products used</p>
+                  <p className="text-lg text-[#495057] mb-3 font-bold">Products used</p>
                   <div className="space-y-2">
                     {selectedBrand.products.map((product, index) => {
                       let IconComponent;
@@ -309,8 +295,8 @@ export function Enterprise() {
                       else IconComponent = Zap;
                       return (
                         <div key={index} className="flex items-center gap-2">
-                          <IconComponent className="text-xl text-[#0a2540]" />
-                          <span className="text-base text-[#0a2540]">{product.name}</span>
+                          <IconComponent className="text-xl text-[#101418]" />
+                          <span className="text-base text-[#101418]">{product.name}</span>
                         </div>
                       );
                     })}
@@ -332,14 +318,14 @@ export function Enterprise() {
                     : "opacity-100 scale-100"
                     }`}
                 >
-                  <Image
-                    src={selectedBrand.image}
-                    alt={`${selectedBrand.name} case study`}
-                    fill
-                    className="object-cover object-center"
-                    sizes="(max-width: 768px) 100vw, 800px"
-                    priority
-                  />
+                  <div className="flex h-full w-full flex-col items-center justify-center gap-4 bg-[#101418] p-6">
+                    <span className="flex h-16 w-16 items-center justify-center rounded-2xl bg-[#00b37e] text-2xl font-extrabold text-[#101418]">
+                      {selectedBrand.name.charAt(0)}
+                    </span>
+                    <span className="text-3xl font-extrabold tracking-tight text-white/80">
+                      {selectedBrand.name}
+                    </span>
+                  </div>
                 </div>
 
                 {/* Gradient Overlay - Dynamic based on brand */}
@@ -380,7 +366,6 @@ export function Enterprise() {
         <div className="mt-16 pt-8 border-t border-slate-200">
           <div className="flex flex-col md:flex-row items-center justify-between gap-12">
             {BRAND_DATA.map((brand, index) => {
-              const LogoComponent = brand.logoComponent;
               const isSelected = selectedBrand.name === brand.name;
               return (
                 <button
@@ -392,7 +377,7 @@ export function Enterprise() {
                     }`}
                   aria-label={`Select ${brand.name} case study`}
                 >
-                  <LogoComponent />
+                  <ClientLogo name={brand.name} />
                 </button>
               );
             })}

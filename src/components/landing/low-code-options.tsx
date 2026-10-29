@@ -11,14 +11,14 @@ export function LowCodeOptions() {
       <div className="diagonal-content-reverse max-w-[1080px] mx-auto px-6 md:px-4 lg:px-0">
         {/* Header Section */}
         <div className="mb-12 sm:mb-16">
-          <h2 className="text-[#635bff] font-bold text-sm uppercase tracking-wide mb-3">
-            Built for growth
+          <h2 className="text-[#00b37e] font-bold text-sm uppercase tracking-wide mb-3">
+            Integrations
           </h2>
-          <h3 className="text-2xl sm:text-3xl md:text-4xl font-bold tracking-tight text-[#0a2540] mb-4 sm:mb-6">
-            Take your startup further, faster
+          <h3 className="text-2xl sm:text-3xl md:text-4xl font-bold tracking-tight text-[#101418] mb-4 sm:mb-6">
+            Extend Kernia without writing code
           </h3>
-          <p className="text-base sm:text-lg text-[#425466] mb-6 sm:mb-8 leading-relaxed max-w-3xl">
-            Startups build on KeyOneHub to launch faster, adapt as they grow, and automate workflows to do more with less. Build your own API-based integration or use our low-to no-code solutions, which are simple enough for easy implementation and powerful enough to scale as fast and as far as you need.
+          <p className="text-base sm:text-lg text-[#495057] mb-6 sm:mb-8 leading-relaxed max-w-3xl">
+            Connect your helpdesk, monitoring and identity providers, or let a partner wire the whole stack for you. Every integration shares the same audit trail, so nothing leaves the platform untracked.
           </p>
         </div>
 
@@ -39,7 +39,7 @@ export function LowCodeOptions() {
                         <path d="M4 17L12 21L20 17" stroke="white" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
                         <path d="M4 12L12 16L20 12" stroke="white" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
                       </svg>
-                      <span className="text-white text-[10px] font-bold leading-tight tracking-tight">SQUARESPACE</span>
+                      <span className="text-white text-[10px] font-bold leading-tight tracking-tight">SUPPORT</span>
                     </div>
                   </div>
 
@@ -60,7 +60,7 @@ export function LowCodeOptions() {
 
                   {/* Intuit Logo - Bottom Left (blue) */}
                   <div className="w-24 h-24 rounded-full bg-blue-600 flex items-center justify-center shadow-lg">
-                    <span className="text-white text-sm font-bold tracking-wide">intuit</span>
+                    <span className="text-white text-sm font-bold tracking-wide">MONITOR</span>
                   </div>
 
                   {/* Segment-like Logo - Bottom Right (white with red flame icon) */}
@@ -82,14 +82,15 @@ export function LowCodeOptions() {
 
 
               {/* Title and Description */}
-              <h4 className="text-xl font-bold text-[#0a2540] mb-2">Use a pre-integrated platform</h4>
-              <p className="text-sm text-[#425466] leading-relaxed mb-4">
-                Explore our directory to find out-of-the-box solutions that connect with KeyOneHub, such as Squarespace and Lightspeed.              </p>
+              <h4 className="text-xl font-bold text-[#101418] mb-2">Use a pre-integrated platform</h4>
+              <p className="text-sm text-[#495057] leading-relaxed mb-4">
+                Browse the directory for out-of-the-box connections to your helpdesk, monitoring stack and identity provider.
+              </p>
 
               {/* Learn More Link */}
               <Link
                 href="#"
-                className="inline-flex items-center text-sm font-medium text-[#635bff] hover:text-[#5851ea] transition-all duration-300 opacity-0 group-hover:opacity-100"
+                className="inline-flex items-center text-sm font-medium text-[#00b37e] hover:text-[#00a372] transition-all duration-300 opacity-0 group-hover:opacity-100"
               >
                 See directory{" "}
                 <ChevronRight className="text-sm ml-1" />
@@ -98,7 +99,7 @@ export function LowCodeOptions() {
             </div>
           </div>
 
-          {/* Card 2: Payment Links */}
+          {/* Card 2: Partners */}
           <div className="bg-white rounded-xl p-1 shadow-lg group flex flex-col flex-1 min-w-[320px] max-w-full md:max-w-[calc(33.333%-16px)]">
             {/* Embedded White Panel with Two Columns - Now on top */}
             <div className="bg-gray-100 rounded-xl flex justify-end pt-16 relative flex-shrink-0 h-[320px]">
@@ -112,9 +113,9 @@ export function LowCodeOptions() {
                       <div className="absolute inset-0 bg-gradient-to-br from-cyan-300 to-teal-400 opacity-20 rounded-full"></div>
                     </div>
                     {/* Shield badge with checkmark */}
-                    <div className="absolute -top-1 -right-1 w-8 h-8 bg-purple-700 rounded-full flex items-center justify-center shadow-md border-2 border-white relative">
+                    <div className="absolute -top-1 -right-1 w-8 h-8 bg-emerald-700 rounded-full flex items-center justify-center shadow-md border-2 border-white relative">
                       <Shield className="w-4 h-4 text-white" fill="currentColor" />
-                      <div className="absolute -bottom-0.5 -right-0.5 w-4 h-4 bg-purple-700 rounded-full border-2 border-white flex items-center justify-center">
+                      <div className="absolute -bottom-0.5 -right-0.5 w-4 h-4 bg-emerald-700 rounded-full border-2 border-white flex items-center justify-center">
                         <CheckCircle2 className="w-2.5 h-2.5 text-white" fill="currentColor" />
                       </div>
                     </div>
@@ -131,7 +132,7 @@ export function LowCodeOptions() {
                   ))}
                 </div>
 
-                {/* Right Circle - KeyOneHub App Windows */}
+                {/* Right Circle - Kernia App Windows */}
                 <div className="relative">
                   <div className="w-24 h-24 rounded-full bg-white flex items-center justify-center shadow-lg relative">
                     {/* Background window (blue) - rotated */}
@@ -140,8 +141,8 @@ export function LowCodeOptions() {
                     <div className="relative w-14 h-14 bg-white rounded-md border border-slate-200 shadow-md transform rotate-[2deg]">
                       {/* Window header bar */}
                       <div className="absolute top-0 left-0 right-0 h-2 bg-slate-50 border-b border-slate-200 rounded-t-md"></div>
-                      {/* KeyOneHub logo in bottom-left */}
-                      <div className="absolute bottom-1.5 left-1.5 w-5 h-5 bg-purple-700 rounded flex items-center justify-center shadow-sm">
+                      {/* Kernia logo in bottom-left */}
+                      <div className="absolute bottom-1.5 left-1.5 w-5 h-5 bg-emerald-700 rounded flex items-center justify-center shadow-sm">
                         <span className="text-white text-[9px] font-bold leading-none">S</span>
                       </div>
                     </div>
@@ -158,15 +159,15 @@ export function LowCodeOptions() {
 
 
               {/* Title and Description */}
-              <h4 className="text-xl font-bold text-[#0a2540] mb-2">Build with KeyOneHub-certified experts</h4>
-              <p className="text-sm text-[#425466] leading-relaxed mb-4">
-                Work with a KeyOneHub consulting partner that can integrate and deploy KeyOneHub solutions for you.
+              <h4 className="text-xl font-bold text-[#101418] mb-2">Build with Kernia-certified experts</h4>
+              <p className="text-sm text-[#495057] leading-relaxed mb-4">
+                Work with a Kernia consulting partner that can integrate and deploy Kernia solutions for you.
               </p>
 
               {/* Learn More Link */}
               <Link
                 href="#"
-                className="inline-flex items-center text-sm font-medium text-[#635bff] hover:text-[#5851ea] transition-all duration-300 opacity-0 group-hover:opacity-100"
+                className="inline-flex items-center text-sm font-medium text-[#00b37e] hover:text-[#00a372] transition-all duration-300 opacity-0 group-hover:opacity-100"
               >
                 View partners{" "}
                 <ChevronRight className="text-sm ml-1" />
@@ -175,35 +176,35 @@ export function LowCodeOptions() {
             </div>
           </div>
 
-          {/* Card 3: Sell products */}
+          {/* Card 3: Brand elements */}
           <div className="bg-white rounded-xl p-1 shadow-lg group flex flex-col flex-1 min-w-[320px] max-w-full md:max-w-[calc(33.333%-16px)]">
             {/* Embedded White Panel with Two Columns - Now on top */}
             <div className="bg-gray-100 rounded-xl flex justify-end pt-16 relative flex-shrink-0 h-[320px]">
               <div className="bg-white rounded-tl-lg p-4 w-full max-w-[320px] mx-auto">
                 {/* Brand Elements Form */}
-                <div className="text-xs font-semibold text-[#0a2540] mb-1">Brand elements</div>
-                <div className="text-[10px] text-[#425466] mb-4 leading-relaxed">
-                  Customize how your brand appears globally across the KeyOneHub products your customers use.
+                <div className="text-xs font-semibold text-[#101418] mb-1">Brand elements</div>
+                <div className="text-[10px] text-[#495057] mb-4 leading-relaxed">
+                  Customize how your brand appears globally across the Kernia products your customers use.
                 </div>
 
                 {/* Icon field */}
                 <div className="flex gap-2 items-center justify-between mb-3">
-                  <label className="text-xs text-[#425466] mb-1 block">Icon</label>
+                  <label className="text-xs text-[#495057] mb-1 block">Icon</label>
                   <div className="flex items-center gap-2">
                     <button className="w-10 h-10 border border-slate-300 rounded-full flex items-center justify-center bg-white hover:bg-slate-50 transition-colors">
-                      <span className="text-sm font-semibold text-[#0a2540]">T</span>
+                      <span className="text-sm font-semibold text-[#101418]">T</span>
                     </button>
                   </div>
                 </div>
 
                 {/* Logo field */}
                 <div className="flex gap-2 items-center justify-between mb-3">
-                  <label className="text-xs text-[#425466] mb-1 block">Logo</label>
+                  <label className="text-xs text-[#495057] mb-1 block">Logo</label>
                   <input
                     type="text"
-                    value="Typeform"
+                    value="Northwind"
                     readOnly
-                    className="w-full border border-slate-300 rounded px-3 py-2 text-sm bg-white text-[#0a2540]"
+                    className="w-full border border-slate-300 rounded px-3 py-2 text-sm bg-white text-[#101418]"
                   />
                 </div>
 
@@ -211,14 +212,14 @@ export function LowCodeOptions() {
 
                 {/* Brand color field */}
                 <div className="flex gap-2 items-center justify-between">
-                  <label className="text-xs text-[#425466] mb-1 block">Brand color</label>
+                  <label className="text-xs text-[#495057] mb-1 block">Brand color</label>
                   <div className="flex items-center gap-2">
                     <div className="w-8 h-8 rounded border border-slate-300 bg-[#F5F0EA]" />
                     <input
                       type="text"
                       value="#F5F0EA"
                       readOnly
-                      className="flex-1 border border-slate-300 rounded px-3 py-2 text-xs bg-white text-[#425466] font-mono"
+                      className="flex-1 border border-slate-300 rounded px-3 py-2 text-xs bg-white text-[#495057] font-mono"
                     />
                   </div>
                 </div>
@@ -233,14 +234,14 @@ export function LowCodeOptions() {
 
 
               {/* Title and Description */}
-              <h4 className="text-xl font-bold text-[#0a2540] mb-2">Try our no-code products</h4>
-              <p className="text-sm text-[#425466] leading-relaxed mb-4">
-                Set up usage-based billing, accept an in-person payment with your phone, or share a payment link directly from your Dashboard to start generating revenue in minutes—no code required.                </p>
+              <h4 className="text-xl font-bold text-[#101418] mb-2">Try our no-code products</h4>
+              <p className="text-sm text-[#495057] leading-relaxed mb-4">
+                Route tickets, trigger escalations or notify an on-call channel straight from the dashboard — no code required.                </p>
 
               {/* Learn More Link */}
               <Link
                 href="#"
-                className="inline-flex items-center text-sm font-medium text-[#635bff] hover:text-[#5851ea] transition-all duration-300 opacity-0 group-hover:opacity-100"
+                className="inline-flex items-center text-sm font-medium text-[#00b37e] hover:text-[#00a372] transition-all duration-300 opacity-0 group-hover:opacity-100"
               >
                 Explore no-code{" "}
                 <ChevronRight className="text-sm ml-1" />
