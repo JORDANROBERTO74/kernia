@@ -1,48 +1,78 @@
-# Next.js Template
+# Kernia
 
-This is a [Next.js](https://nextjs.org) project template bootstrapped with the App Router.
+Marketing site for Kernia, an AI operations platform for IT support teams. One page, eleven sections, built with Next.js 14, TypeScript and Tailwind CSS.
 
-## Getting Started
+Live: https://kernia.vercel.app
 
-First, install the dependencies:
+![Kernia marketing site](docs/screenshot.jpg)
+
+## What it covers
+
+- Hero with email capture
+- Client strip and platform features
+- Global scale metrics and security/compliance
+- Enterprise case studies (fictional)
+- Startup and developer sections with an API example
+- No-code integrations directory
+- Closing CTA and footer
+
+## Stack
+
+| Layer | Choice |
+| --- | --- |
+| Framework | Next.js 14.1 (App Router) |
+| Language | TypeScript |
+| Styling | Tailwind CSS 3 + shadcn/ui (Radix) |
+| Type | Manrope via `next/font` |
+| Motion | Framer Motion |
+| Icons | lucide-react |
+
+## Getting started
 
 ```bash
 npm install
-```
-
-Then, run the development server:
-
-```bash
 npm run dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open http://localhost:3000.
 
-You can start editing the page by modifying `src/app/page.tsx`. The page auto-updates as you edit the file.
+## Scripts
 
-## Project Structure
+```bash
+npm run dev      # development server
+npm run lint     # ESLint
+npm run build    # production build
+npm run start    # serve the production build
+```
+
+## Project structure
 
 ```
 src/
-├── app/              # Next.js App Router
-│   ├── layout.tsx    # Root layout
-│   ├── page.tsx      # Home page
-│   └── globals.css   # Global styles
-├── components/       # React components
-│   └── ui/          # UI components (shadcn/ui)
-├── hooks/           # Custom React hooks
-└── lib/             # Utility functions
+  app/                 # App Router entry, layout, metadata, icon, OG image
+  components/
+    landing/           # page sections (hero, features, enterprise, cta, footer…)
+    commons/           # shared client logo
+    ui/                # shadcn/ui primitives
+  lib/                 # utilities and hooks
 ```
 
-## Learn More
+## Design tokens
 
-To learn more about Next.js, take a look at the following resources:
+Colours and type live in `src/app/globals.css` and `tailwind.config.ts`.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+| Token | Value | Use |
+| --- | --- | --- |
+| ink | `#101418` | headings, dark surfaces |
+| accent | `#00B37E` | primary actions, links |
+| accent-2 | `#4CD7F6` | gradients, highlights |
+| muted | `#495057` | body copy |
+| surface | `#F5F7F8` | section backgrounds |
 
-## Deploy on Vercel
+## Deployment
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+The site deploys to Vercel from `main`. Pushing to `main` triggers a production build.
 
-Check out the [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## License
+
+Proprietary. See `LICENSE`.

@@ -1,15 +1,14 @@
 {
-  "projectContext": "VasCruz Group LLC - Commercial intermediation website built with Next.js 14, TypeScript, Tailwind CSS, shadcn/ui, and Framer Motion. The project uses next-intl for internationalization (ES/EN) and follows specific UI development patterns.",
+  "projectContext": "Kernia - AI operations platform marketing site for IT support teams. Single page built with Next.js 14, TypeScript, Tailwind CSS, shadcn/ui and Framer Motion. English only, no i18n layer.",
   "codingGuidelines": {
     "framework": "Next.js 14 with App Router",
     "styling": "Tailwind CSS with custom design system",
     "uiLibrary": "shadcn/ui + Radix UI",
     "animations": "Framer Motion",
-    "i18n": "next-intl (ES/EN)",
+    "i18n": "none (English only)",
     "patterns": [
       "Use 'use client' directive for client components",
       "Implement motion animations with Framer Motion",
-      "Extract data from messages using useMessages hook",
       "Follow responsive design with mobile-first approach",
       "Use standard CSS classes from the design system",
       "Include fallback for missing data",
@@ -23,9 +22,9 @@
         "import { motion } from \"framer-motion\";",
         "import { [ICONS] } from \"lucide-react\";",
         "import { [UI_COMPONENTS] } from \"@/components/ui/[component]\";",
-        "import { useMessages } from \"next-intl\";"
+        "import { cn } from \"@/lib/utils\";"
       ],
-      "dataExtraction": "const messages = useMessages(); const data = (messages as any)?.[section]?.[subsection];",
+      "dataExtraction": "Content lives in the section components under src/components/landing; no message catalogs.",
       "fallback": "Return fallback UI if data is not available",
       "structure": "Section with container, responsive grid, and motion animations"
     }
