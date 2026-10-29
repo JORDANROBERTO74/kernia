@@ -2,69 +2,74 @@
 
 import React from "react";
 import Link from "next/link";
-import { ArrowRight, ChevronRight, Code, BookOpen } from "lucide-react";
+import { ArrowRight } from "lucide-react";
+import { Shell } from "./shell";
 
 export function CTA() {
   return (
-    <section id="pricing" className="py-24 bg-white border-t border-slate-100">
-      <div className="max-w-[1080px] mx-auto px-6 md:px-4 lg:px-0">
-        <div className="grid md:grid-cols-2 gap-8 md:gap-12 items-center">
-          <div>
-            <h2 className="text-2xl sm:text-3xl font-bold text-[#101418] mb-4 sm:mb-6">Ready to get started?</h2>
-            <p className="text-[#495057] mb-6 sm:mb-8 text-base sm:text-lg max-w-sm">
-              Connect your helpdesk, route tickets with AI, and keep every automation auditable. Start free, or talk to us about a rollout plan for your support organisation.
+    <section id="pricing" className="border-b border-line bg-white py-16 md:py-20">
+      <Shell>
+        <div className="grid border border-ink lg:grid-cols-12">
+          <div className="border-b border-line p-7 md:p-10 lg:col-span-6 lg:border-b-0 lg:border-r">
+            <p className="eyebrow">[09] Get started</p>
+            <h2 className="mt-4 text-[clamp(1.7rem,2.8vw,2.3rem)] font-bold leading-[1.05] tracking-[-0.03em] text-ink">
+              Ready to get started?
+            </h2>
+            <p className="mt-3 max-w-[40ch] text-[14px] leading-relaxed text-ink-soft">
+              Connect your helpdesk, route tickets with AI and keep every
+              automation auditable. Start free or plan a rollout with us.
             </p>
-            <div className="flex flex-col sm:flex-row flex-wrap gap-3 sm:gap-4">
-              <Link
-                href="#"
-                className="inline-flex items-center justify-center px-5 py-2 text-sm font-bold rounded-full text-white bg-[#00b37e] hover:bg-[#101418] transition-colors shadow-lg shadow-teal-500/30 group"
+            <form
+              className="mt-7 flex max-w-sm flex-col gap-2 sm:flex-row"
+              onSubmit={(e) => e.preventDefault()}
+            >
+              <label className="sr-only" htmlFor="cta-email">
+                Work email
+              </label>
+              <input
+                id="cta-email"
+                type="email"
+                placeholder="you@company.com"
+                className="h-10 flex-1 border border-line bg-white px-3 font-mono text-[12px] text-ink placeholder:text-ink-mute focus:border-ink focus:outline-none"
+              />
+              <button
+                type="submit"
+                className="inline-flex h-10 items-center justify-center gap-2 bg-ink px-4 text-[12px] font-semibold text-white transition-colors hover:bg-signal-deep"
               >
-                Start now{" "}
-                <ArrowRight className="text-sm ml-1 group-hover:translate-x-1 transition-transform" />
-              </Link>
-              <Link
-                href="#"
-                className="inline-flex items-center justify-center px-5 py-2 text-sm font-bold rounded-full text-[#00b37e] bg-[#00b37e]/10 hover:bg-[#00b37e]/20 transition-colors"
-              >
-                Contact sales{" "}
-                <ChevronRight className="text-sm ml-1" />
-              </Link>
-            </div>
+                Start now
+                <ArrowRight className="h-3.5 w-3.5" />
+              </button>
+            </form>
           </div>
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6">
-            <div className="p-5 sm:p-6 transition-all duration-200 hover:-translate-y-1">
-              <div className="flex items-center gap-2 text-[#101418] font-bold mb-2">
-                <Code className="text-[#00b37e]" />
-                <span>Predictable pricing</span>
-              </div>
-              <p className="text-sm text-[#495057]">
-                Per-agent plans with no hidden fees or per-ticket surcharges.
-              </p>
+
+          <div className="grid divide-y divide-line lg:col-span-6">
+            {[
+              ["Predictable pricing", "Per-agent plans with no per-ticket surcharges.", "Pricing details"],
+              ["Start your integration", "Get up and running with the developer docs.", "API reference"],
+              ["Talk to sales", "Scope a rollout for a distributed service desk.", "Contact sales"],
+            ].map(([title, detail, action]) => (
               <Link
+                key={title}
                 href="#"
-                className="text-[#00b37e] font-semibold text-sm mt-3 inline-block hover:text-[#101418]"
+                className="group flex items-center justify-between gap-6 p-6 transition-colors hover:bg-paper md:px-8"
               >
-                Pricing details →
+                <span>
+                  <span className="block text-[13.5px] font-semibold text-ink">
+                    {title}
+                  </span>
+                  <span className="mt-1 block text-[12px] text-ink-soft">
+                    {detail}
+                  </span>
+                </span>
+                <span className="flex shrink-0 items-center gap-1.5 font-mono text-[10px] uppercase tracking-[0.1em] text-signal-deep">
+                  {action}
+                  <ArrowRight className="h-3 w-3 transition-transform group-hover:translate-x-0.5" />
+                </span>
               </Link>
-            </div>
-            <div className="p-6 transition-all duration-200 hover:-translate-y-1">
-              <div className="flex items-center gap-2 text-[#101418] font-bold mb-2">
-                <BookOpen className="text-[#00b37e]" />
-                <span>Start your integration</span>
-              </div>
-              <p className="text-sm text-[#495057]">
-                Get up and running with our easy-to-use developer docs.
-              </p>
-              <Link
-                href="#"
-                className="text-[#00b37e] font-semibold text-sm mt-3 inline-block hover:text-[#101418]"
-              >
-                API Reference →
-              </Link>
-            </div>
+            ))}
           </div>
         </div>
-      </div>
+      </Shell>
     </section>
   );
 }

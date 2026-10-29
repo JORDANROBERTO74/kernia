@@ -1,15 +1,13 @@
 import type { Metadata } from "next";
-import { Manrope } from 'next/font/google'
+import { Manrope } from "next/font/google";
 import "./globals.css";
 import { Navigation } from "@/components/navigation";
-import { ThemeProvider } from "@/components/theme-provider";
-import { cn } from "@/lib/utils";
 
 const fontSans = Manrope({
-  subsets: ['latin'],
-  weight: ['400', '500', '600', '700', '800'],
-  variable: '--font-sans'
-})
+  subsets: ["latin"],
+  weight: ["400", "500", "600", "700", "800"],
+  variable: "--font-sans",
+});
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://kernia.vercel.app"),
@@ -46,17 +44,13 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" suppressHydrationWarning className="scroll-smooth">
-      <body className={cn('font-sans antialiased h-screen', fontSans.variable)}>
-        <ThemeProvider
-          attribute="class"
-          defaultTheme="system"
-          enableSystem
-          disableTransitionOnChange
-        >
-          <Navigation />
-          {children}
-        </ThemeProvider>
+    <html
+      lang="en"
+      className={`${fontSans.variable} scroll-smooth`}
+    >
+      <body className="min-h-screen bg-white font-sans text-ink antialiased">
+        <Navigation />
+        {children}
       </body>
     </html>
   );

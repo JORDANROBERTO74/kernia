@@ -14,34 +14,9 @@ const config = {
     container: {
       center: true,
       padding: "2rem",
-      screens: {
-        "2xl": "1400px",
-      },
+      screens: { "2xl": "1400px" },
     },
     extend: {
-      backgroundImage: {
-        "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
-        "gradient-conic":
-          "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
-        "mesh-gradient":
-          "radial-gradient(circle at 15% 50%, rgba(255, 255, 255, 0.4), transparent 25%), radial-gradient(circle at 85% 30%, rgba(0, 179, 126, 0.2), transparent 25%)",
-      },
-      borderRadius: {
-        lg: "var(--radius)",
-        md: "calc(var(--radius) - 2px)",
-        sm: "calc(var(--radius) - 4px)",
-        xl: "0.75rem",
-        "2xl": "1rem",
-        "3xl": "1.5rem",
-      },
-      boxShadow: {
-        glass:
-          "0 13px 27px -5px rgba(16,20,24,0.18), 0 8px 16px -8px rgba(16,20,24,0.22)",
-        card: "0 50px 100px -20px rgba(16,20,24,0.18), 0 30px 60px -30px rgba(16,20,24,0.22)",
-        subtle: "0 2px 5px -1px rgba(16,20,24,0.18), 0 1px 3px -1px rgba(16,20,24,0.22)",
-        floating:
-          "0 30px 60px -12px rgba(16,20,24,0.18), 0 18px 36px -18px rgba(16,20,24,0.22), 0 -12px 36px -8px rgba(0,0,0,0.025)",
-      },
       colors: {
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
@@ -86,33 +61,55 @@ const config = {
           border: "hsl(var(--sidebar-border))",
           ring: "hsl(var(--sidebar-ring))",
         },
-        "slate-text": "#495057",
-        "slate-dark": "#101418",
+        // Kernia brand scale — control-room palette
+        ink: {
+          DEFAULT: "#101317",
+          soft: "#3f4a48",
+          mute: "#68736f",
+        },
+        signal: {
+          DEFAULT: "#00b37e",
+          soft: "#e6f7f1",
+          deep: "#00795a",
+        },
+        paper: "#f4f7f6",
+        line: "#dde4e2",
+        alert: "#c2681b",
+      },
+      borderRadius: {
+        lg: "var(--radius)",
+        md: "calc(var(--radius) - 2px)",
+        sm: "calc(var(--radius) - 4px)",
+        none: "0px",
+        DEFAULT: "4px",
+      },
+      fontFamily: {
+        sans: ["var(--font-sans)", ...fontFamily.sans],
+        mono: ["ui-monospace", "SFMono-Regular", "Menlo", "Consolas", "monospace"],
+        display: ["var(--font-sans)", ...fontFamily.sans],
+      },
+      boxShadow: {
+        panel: "0 1px 0 0 rgba(16, 19, 23, 0.06)",
+        lift: "0 24px 48px -32px rgba(16, 19, 23, 0.35)",
       },
       keyframes: {
         "accordion-down": {
-          from: {
-            height: "0",
-          },
-          to: {
-            height: "var(--radix-accordion-content-height)",
-          },
+          from: { height: "0" },
+          to: { height: "var(--radix-accordion-content-height)" },
         },
         "accordion-up": {
-          from: {
-            height: "var(--radix-accordion-content-height)",
-          },
-          to: {
-            height: "0",
-          },
+          from: { height: "var(--radix-accordion-content-height)" },
+          to: { height: "0" },
+        },
+        blink: {
+          "0%, 100%": { opacity: "1" },
+          "50%": { opacity: "0.25" },
         },
       },
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
         "accordion-up": "accordion-up 0.2s ease-out",
-      },
-      fontFamily: {
-        sans: ["var(--font-sans)", ...fontFamily.sans],
+        blink: "blink 2.4s ease-in-out infinite",
       },
     },
   },

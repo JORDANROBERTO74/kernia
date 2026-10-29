@@ -2,192 +2,163 @@
 
 import React from "react";
 import Link from "next/link";
-import { ChevronRight, Terminal, Bot, Box, Code } from "lucide-react";
+import { ArrowUpRight } from "lucide-react";
+import { Shell } from "./shell";
+
+const links = [
+  {
+    title: "Use Kernia with your stack",
+    detail: "Client and server libraries from React and Node.js to Python and Go.",
+  },
+  {
+    title: "Build AI agents",
+    detail: "Agents that read tickets, run workflows and hand work back to a human.",
+  },
+  {
+    title: "Explore prebuilt integrations",
+    detail: "Airbyte, MCP servers and direct API connections to existing tools.",
+  },
+  {
+    title: "Build on Kernia Apps",
+    detail: "Package custom automations for your team or the community.",
+  },
+];
+
+const services = [
+  ["REST API", "operational"],
+  ["Webhooks", "operational"],
+  ["MCP gateway", "operational"],
+];
 
 export function Developers() {
   return (
-    <section id="developers" className="bg-[#101418] py-36 diagonal-container -mt-5 relative z-20 text-white overflow-hidden">
-      <div className="diagonal-content-reverse max-w-[1080px] mx-auto px-6 md:px-4 lg:px-0 grid lg:grid-cols-2 gap-8 md:gap-12 lg:gap-16 items-center">
-        <div>
-          <h2 className="text-[#4cd7f6] font-bold text-sm uppercase tracking-wide mb-3">
-            Designed for Developers
-          </h2>
-          <h3 className="text-2xl sm:text-3xl md:text-4xl font-bold tracking-tight text-white mb-4 sm:mb-6">
-            Powerful APIs for automation and integration.
-          </h3>
-          <p className="text-base sm:text-lg text-slate-300 mb-6 sm:mb-8 leading-relaxed">
-            We agonize over the right abstractions so your teams don&apos;t need to stitch together disparate systems or spend months building automation workflows from scratch.
-          </p>
-          <div className="flex items-center gap-4 mb-8">
-            <div className="flex-shrink-0 w-12 h-1 bg-[#00b37e] rounded-full"></div>
-            <p className="text-sm font-medium text-slate-300">
-              Client libraries available in every major language
+    <section
+      id="developers"
+      className="border-b border-line bg-ink py-20 text-white md:py-28"
+    >
+      <Shell>
+        <div className="grid gap-10 lg:grid-cols-12 lg:gap-12">
+          <div className="lg:col-span-4">
+            <p className="flex items-center gap-3 font-mono text-[11px] uppercase tracking-[0.18em] text-white/45">
+              <span aria-hidden className="h-1.5 w-1.5 bg-signal" />
+              <span>[07]</span>
+              Designed for developers
             </p>
-          </div>
-          <div className="flex flex-col sm:flex-row gap-3 sm:gap-4">
+            <h2 className="mt-5 max-w-[16ch] text-[clamp(1.85rem,3.4vw,2.8rem)] font-bold leading-[1.04] tracking-[-0.035em]">
+              Powerful APIs for automation and integration.
+            </h2>
+            <p className="mt-5 max-w-[42ch] text-[14.5px] leading-relaxed text-white/60">
+              We agonise over the right abstractions so your team does not stitch
+              together disparate systems or spend months building workflows from
+              scratch.
+            </p>
+
+            <dl className="mt-8 border-t border-white/15">
+              {services.map(([name, state]) => (
+                <div
+                  key={name}
+                  className="flex items-center justify-between border-b border-white/10 py-2.5 font-mono text-[10.5px] uppercase tracking-[0.1em]"
+                >
+                  <dt className="text-white/60">{name}</dt>
+                  <dd className="flex items-center gap-2 text-white/80">
+                    <span aria-hidden className="h-1 w-1 bg-signal" />
+                    {state}
+                  </dd>
+                </div>
+              ))}
+            </dl>
+
             <Link
               href="#"
-              className="inline-flex items-center justify-center px-5 py-2.5 sm:py-2 text-sm font-bold rounded-full text-[#101418] bg-[#4cd7f6] hover:bg-[#4cd7f6]/90 transition-all"
+              className="mt-7 inline-flex items-center gap-2 border border-white/25 px-4 py-2 font-mono text-[10.5px] uppercase tracking-[0.1em] text-white transition-colors hover:border-signal hover:text-signal"
             >
-              Read the docs{" "}
-              <ChevronRight className="text-sm ml-2" />
+              Read the docs
+              <ArrowUpRight className="h-3.5 w-3.5" />
             </Link>
+          </div>
+
+          <div className="lg:col-span-8">
+            <div className="border border-white/15 bg-black/40">
+              <div className="flex items-center justify-between border-b border-white/10 px-4 py-2">
+                <div className="flex gap-1 font-mono text-[10px] uppercase tracking-[0.1em]">
+                  <span className="bg-white/10 px-2 py-1 text-white">
+                    workflows.ts
+                  </span>
+                  <span className="px-2 py-1 text-white/40">tickets.ts</span>
+                  <span className="px-2 py-1 text-white/40">assets.ts</span>
+                </div>
+                <span className="font-mono text-[9.5px] uppercase tracking-[0.12em] text-white/35">
+                  node 20
+                </span>
+              </div>
+              <pre className="overflow-x-auto p-5 font-mono text-[11.5px] leading-[1.9] text-white/70 sm:text-[12.5px]">
+                <code>
+                  <span className="text-white/35">{"// create and inspect a workflow"}</span>
+                  {"\n"}
+                  <span className="text-white/50">import</span> {"{ Kernia } "}
+                  <span className="text-white/50">from</span>{" "}
+                  <span className="text-signal">&apos;kernia&apos;</span>;
+                  {"\n\n"}
+                  <span className="text-white/50">const</span> kernia ={" "}
+                  <span className="text-white/50">new</span> Kernia(
+                  <span className="text-signal">&apos;sk_live_...&apos;</span>);
+                  {"\n\n"}
+                  <span className="text-white/50">const</span> workflow ={" "}
+                  <span className="text-white/50">await</span> kernia.workflows.
+                  <span className="text-white">create</span>({"{"}
+                  {"\n  "}name:{" "}
+                  <span className="text-signal">&apos;Auto ticket routing&apos;</span>,
+                  {"\n  "}trigger: {"{"} event:{" "}
+                  <span className="text-signal">&apos;ticket.created&apos;</span> {"}"},
+                  {"\n  "}steps: [
+                  {"\n    "}
+                  {"{ action: "}
+                  <span className="text-signal">&apos;classify&apos;</span>
+                  {", model: "}
+                  <span className="text-signal">&apos;gpt-4o&apos;</span>
+                  {" }"},
+                  {"\n    "}
+                  {"{ action: "}
+                  <span className="text-signal">&apos;route&apos;</span>
+                  {", team: "}
+                  <span className="text-signal">&apos;network&apos;</span>
+                  {" },"}
+                  {"\n  "}],
+                  {"\n"}{"}"});
+                  {"\n\n"}
+                  <span className="text-white/35">{"// p95 1.2s · 0 failed runs"}</span>
+                </code>
+              </pre>
+              <div className="flex items-center justify-between border-t border-white/10 px-4 py-2 font-mono text-[9.5px] uppercase tracking-[0.12em] text-white/35">
+                <span>POST /v1/workflows</span>
+                <span className="text-signal">200 ok</span>
+              </div>
+            </div>
           </div>
         </div>
-        <div className="relative bg-[#1a2542] rounded-lg shadow-2xl border border-white/10 overflow-hidden font-mono text-xs sm:text-sm leading-relaxed mt-8 lg:mt-0">
-          <div className="flex items-center px-4 py-3 bg-[#101418] border-b border-white/10">
-            <div className="flex gap-2">
-              <div className="w-3 h-3 rounded-full bg-red-500"></div>
-              <div className="w-3 h-3 rounded-full bg-yellow-500"></div>
-              <div className="w-3 h-3 rounded-full bg-green-500"></div>
-            </div>
-            <div className="mx-auto text-xs text-slate-400 font-sans">server.js</div>
-          </div>
-          <div className="p-4 sm:p-6 overflow-x-auto text-slate-300">
-            <pre className="text-xs sm:text-sm">
-              <code>
-                <span className="token-keyword">const</span> kernia ={" "}
-                <span className="token-function">require</span>(
-                <span className="token-string">&apos;kernia&apos;</span>)(
-                <span className="token-string">&apos;sk_test_...&apos;</span>);
-                <br />
-                <span className="token-keyword">const</span> workflow ={" "}
-                <span className="token-keyword">await</span> kernia.workflows.
-                <span className="token-function">create</span>(&#123;
-                <br />
-                {"  "}
-                <span className="token-string">name</span>:{" "}
-                <span className="token-string">&apos;Auto Ticket Routing&apos;</span>,
-                <br />
-                {"  "}
-                <span className="token-string">trigger</span>: &#123;
-                <br />
-                {"    "}
-                <span className="token-string">type</span>:{" "}
-                <span className="token-string">&apos;event&apos;</span>,
-                <br />
-                {"    "}
-                <span className="token-string">event</span>:{" "}
-                <span className="token-string">&apos;ticket.created&apos;</span>,
-                <br />
-                {"  "}&#125;,
-                <br />
-                {"  "}
-                <span className="token-string">steps</span>: [
-                <br />
-                {"    "}&#123;
-                <br />
-                {"      "}
-                <span className="token-string">action</span>:{" "}
-                <span className="token-string">&apos;classify&apos;</span>,
-                <br />
-                {"      "}
-                <span className="token-string">model</span>:{" "}
-                <span className="token-string">&apos;gpt-4&apos;</span>,
-                <br />
-                {"    "}&#125;,
-                <br />
-                {"    "}&#123;
-                <br />
-                {"      "}
-                <span className="token-string">action</span>:{" "}
-                <span className="token-string">&apos;route&apos;</span>,
-                <br />
-                {"      "}
-                <span className="token-string">team</span>:{" "}
-                <span className="token-string">&apos;support&apos;</span>,
-                <br />
-                {"    "}&#125;,
-                <br />
-                {"  "}],
-                <br />
-                &#125;);
-              </code>
-            </pre>
-          </div>
-          <div className="bg-[#101418] p-3 text-xs text-slate-400 border-t border-white/10 flex justify-between">
-            <span>Terminal</span>
-            <span className="text-green-400">● Online</span>
-          </div>
-        </div>
-      </div>
 
-      {/* Feature cards row */}
-      <div className="diagonal-content-reverse max-w-[1080px] mx-auto px-6 md:px-4 lg:px-0 mt-16 md:mt-24">
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4">
-          {/* Card 1: Use Kernia with your stack */}
-          <div className="flex flex-col p-6 lg:p-8 border-b border-white/20 sm:border-b-0 sm:border-r sm:border-dotted lg:border-r lg:border-dotted">
-            <div className="w-12 h-12 rounded-lg bg-[#4cd7f6]/20 flex items-center justify-center mb-4 relative overflow-hidden">
-              <Terminal className="w-6 h-6 text-white relative z-10" />
-              <div className="absolute bottom-0 right-0 w-6 h-6 bg-[#00b37e]/40 rounded-tl-full" />
-            </div>
-            <div className="flex gap-2">
-              <div className="h-7 w-px bg-white/60" />
-              <h4 className="text-lg font-bold text-white mb-2">Use Kernia with your stack</h4>
-            </div>
-            <p className="text-slate-300 text-sm leading-relaxed mb-4 flex-grow">
-              We offer client and server libraries in everything from React and Node.js to Python and Go.
-            </p>
-            <Link href="#" className="inline-flex items-center text-[#4cd7f6] font-semibold text-sm hover:text-[#4cd7f6]/80 transition-colors">
-              See libraries <ChevronRight className="w-4 h-4 ml-0.5" />
-            </Link>
-          </div>
-
-          {/* Card 2: Build AI agents */}
-          <div className="flex flex-col p-6 lg:p-8 border-b border-white/20 sm:border-b-0 sm:border-r sm:border-dotted lg:border-r lg:border-dotted">
-            <div className="w-12 h-12 rounded-lg bg-[#4cd7f6]/20 flex items-center justify-center mb-4 relative overflow-hidden">
-              <Bot className="w-6 h-6 text-white relative z-10" />
-              <div className="absolute bottom-0 right-0 w-6 h-6 bg-[#00b37e]/40 rounded-tl-full" />
-            </div>
-            <div className="flex gap-2">
-              <div className="h-7 w-px bg-white/60" />
-              <h4 className="text-lg font-bold text-white mb-2">Build AI agents</h4>
-            </div>
-            <p className="text-slate-300 text-sm leading-relaxed mb-4 flex-grow">
-              Create AI agents that can analyze tickets, automate workflows, and handle support tasks using the Kernia API.
-            </p>
-            <Link href="#" className="inline-flex items-center text-[#4cd7f6] font-semibold text-sm hover:text-[#4cd7f6]/80 transition-colors">
-              View docs <ChevronRight className="w-4 h-4 ml-0.5" />
-            </Link>
-          </div>
-
-          {/* Card 3: Explore prebuilt integrations */}
-          <div className="flex flex-col p-6 lg:p-8 border-b border-white/20 sm:border-b-0 sm:border-r sm:border-dotted lg:border-r lg:border-dotted">
-            <div className="w-12 h-12 rounded-lg bg-[#4cd7f6]/20 flex items-center justify-center mb-4 relative overflow-hidden">
-              <Box className="w-6 h-6 text-white relative z-10" />
-              <div className="absolute bottom-0 right-0 w-6 h-6 bg-[#00b37e]/40 rounded-tl-full" />
-            </div>
-            <div className="flex gap-2">
-              <div className="h-7 w-px bg-white/60" />
-              <h4 className="text-lg font-bold text-white mb-2">Explore prebuilt integrations</h4>
-            </div>
-            <p className="text-slate-300 text-sm leading-relaxed mb-4 flex-grow">
-              Connect Kernia via Airbyte, MCP servers, and direct API integrations to your existing tools and systems.
-            </p>
-            <Link href="#" className="inline-flex items-center text-[#4cd7f6] font-semibold text-sm hover:text-[#4cd7f6]/80 transition-colors">
-              Browse Integrations <ChevronRight className="w-4 h-4 ml-0.5" />
-            </Link>
-          </div>
-
-          {/* Card 4: Build on Kernia Apps */}
-          <div className="flex flex-col p-6 lg:p-8 border-b border-white/20 sm:border-b-0">
-            <div className="w-12 h-12 rounded-lg bg-[#4cd7f6]/20 flex items-center justify-center mb-4 relative overflow-hidden">
-              <Code className="w-6 h-6 text-white relative z-10" />
-              <div className="absolute bottom-0 right-0 w-6 h-6 bg-[#00b37e]/40 rounded-tl-full" />
-            </div>
-            <div className="flex gap-2">
-              <div className="h-7 w-px bg-white/60" />
-              <h4 className="text-lg font-bold text-white mb-2">Build on Kernia Apps</h4>
-            </div>
-            <p className="text-slate-300 text-sm leading-relaxed mb-4 flex-grow">
-              Build custom automations and workflows for your team, or share them with the Kernia community.
-            </p>
-            <Link href="#" className="inline-flex items-center text-[#4cd7f6] font-semibold text-sm hover:text-[#4cd7f6]/80 transition-colors">
-              Learn about Workflows <ChevronRight className="w-4 h-4 ml-0.5" />
-            </Link>
-          </div>
-        </div>
-      </div>
+        <ul className="mt-14 grid border-t border-white/15 sm:grid-cols-2 lg:grid-cols-4">
+          {links.map((link, index) => (
+            <li
+              key={link.title}
+              className={`border-b border-white/10 py-6 sm:pr-6 ${index > 0 ? "lg:border-l lg:pl-6" : ""}`}
+            >
+              <Link href="#" className="group block">
+                <h3 className="text-[14px] font-semibold text-white">
+                  {link.title}
+                </h3>
+                <p className="mt-2 max-w-[30ch] text-[12.5px] leading-relaxed text-white/50">
+                  {link.detail}
+                </p>
+                <span className="mt-4 inline-flex items-center gap-1 font-mono text-[10px] uppercase tracking-[0.1em] text-signal">
+                  Docs
+                  <ArrowUpRight className="h-3 w-3 transition-transform group-hover:-translate-y-0.5 group-hover:translate-x-0.5" />
+                </span>
+              </Link>
+            </li>
+          ))}
+        </ul>
+      </Shell>
     </section>
   );
 }

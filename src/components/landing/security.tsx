@@ -1,227 +1,91 @@
 "use client";
 
-import React, { useRef, useState, useEffect } from "react";
+import React from "react";
 import Link from "next/link";
-import { Button } from "../ui/button";
-import { ArrowLeft, ArrowRight, ChevronRight } from "lucide-react";
+import { ArrowUpRight } from "lucide-react";
+import { SectionHead, Shell } from "./shell";
+
+const useCases = [
+  {
+    title: "Support teams",
+    description:
+      "Automate routing, classification and resolution, then keep response times and CSAT on the same dashboard.",
+  },
+  {
+    title: "IT operations",
+    description:
+      "Streamline server, database and infrastructure work. Routine maintenance runs on a schedule with a recorded result.",
+  },
+  {
+    title: "DevOps",
+    description:
+      "Connect CI/CD pipelines, deployments and infrastructure changes so incidents start with the last known change.",
+  },
+  {
+    title: "Data teams",
+    description:
+      "Automate pipelines, ETL and synchronisation across Airbyte and MCP sources without losing lineage.",
+  },
+  {
+    title: "Security teams",
+    description:
+      "Turn incident response, threat detection and compliance checks into repeatable, auditable playbooks.",
+  },
+  {
+    title: "Enterprise",
+    description:
+      "Dedicated support, custom integrations, advanced analytics and SOC 2 controls for regulated environments.",
+  },
+];
 
 export function Security() {
-  const scrollContainerRef = useRef<HTMLDivElement>(null);
-  const [isDragging, setIsDragging] = useState(false);
-  const [startX, setStartX] = useState(0);
-  const [scrollLeft, setScrollLeft] = useState(0);
-
-  const businessTypes = [
-    {
-      title: "Support Teams",
-      description: "Automate ticket routing, classification, and resolution. Reduce response times and improve customer satisfaction with AI-powered workflows.",
-      link: "#",
-      logos: [
-        { name: "Zendesk", icon: null },
-        { name: "Freshdesk", icon: "tag" },
-        { name: "ServiceNow", icon: "circle" },
-      ],
-    },
-    {
-      title: "IT Operations",
-      description: "Streamline server management, database operations, and infrastructure monitoring. Automate routine tasks and reduce manual intervention.",
-      link: "#",
-      logos: [
-        { name: "Datadog", icon: "tag" },
-        { name: "New Relic", icon: "circle" },
-        { name: "PagerDuty", icon: "dot" },
-      ],
-    },
-    {
-      title: "DevOps",
-      description: "Integrate with CI/CD pipelines, automate deployments, and manage infrastructure as code. Connect with tools like GitHub Actions and Jenkins.",
-      link: "#",
-      logos: [
-        { name: "GitHub", icon: null },
-        { name: "GitLab", icon: "carrot" },
-        { name: "Jenkins", icon: "delivery" },
-      ],
-    },
-    {
-      title: "Data Teams",
-      description: "Automate data pipelines, ETL processes, and data synchronization. Connect multiple data sources via Airbyte and MCP servers.",
-      link: "#",
-      logos: [
-        { name: "Airbyte", icon: null },
-        { name: "Snowflake", icon: null },
-        { name: "BigQuery", icon: null },
-      ],
-    },
-    {
-      title: "Security Teams",
-      description: "Automate security incident response, threat detection, and compliance monitoring. Integrate with SIEM tools and security platforms.",
-      link: "#",
-      logos: [
-        { name: "Splunk", icon: null },
-        { name: "Elastic", icon: null },
-        { name: "CrowdStrike", icon: null },
-      ],
-    },
-    {
-      title: "Enterprise",
-      description: "Enterprise-grade automation infrastructure with dedicated support, custom integrations, advanced analytics, and SOC2 compliance.",
-      link: "#",
-      logos: [
-        { name: "SSO / SCIM", icon: null },
-        { name: "Audit logs", icon: null },
-        { name: "SOC 2", icon: null },
-      ],
-    },
-  ];
-
-  const handleScrollLeft = () => {
-    if (scrollContainerRef.current) {
-      scrollContainerRef.current.scrollBy({
-        left: -400,
-        behavior: "smooth",
-      });
-    }
-  };
-
-  const handleScrollRight = () => {
-    if (scrollContainerRef.current) {
-      scrollContainerRef.current.scrollBy({
-        left: 400,
-        behavior: "smooth",
-      });
-    }
-  };
-
-  // Drag to scroll functionality
-  const handleMouseDown = (e: React.MouseEvent) => {
-    if (!scrollContainerRef.current) return;
-    setIsDragging(true);
-    setStartX(e.pageX - scrollContainerRef.current.offsetLeft);
-    setScrollLeft(scrollContainerRef.current.scrollLeft);
-    scrollContainerRef.current.style.cursor = "grabbing";
-    scrollContainerRef.current.style.userSelect = "none";
-  };
-
-  const handleMouseLeave = () => {
-    setIsDragging(false);
-    if (scrollContainerRef.current) {
-      scrollContainerRef.current.style.cursor = "grab";
-      scrollContainerRef.current.style.userSelect = "auto";
-    }
-  };
-
-  const handleMouseUp = () => {
-    setIsDragging(false);
-    if (scrollContainerRef.current) {
-      scrollContainerRef.current.style.cursor = "grab";
-      scrollContainerRef.current.style.userSelect = "auto";
-    }
-  };
-
-  const handleMouseMove = (e: React.MouseEvent) => {
-    if (!isDragging || !scrollContainerRef.current) return;
-    e.preventDefault();
-    const x = e.pageX - scrollContainerRef.current.offsetLeft;
-    const walk = (x - startX) * 2; // Scroll speed multiplier
-    scrollContainerRef.current.scrollLeft = scrollLeft - walk;
-  };
-
-  // Touch events for mobile
-  const handleTouchStart = (e: React.TouchEvent) => {
-    if (!scrollContainerRef.current) return;
-    setIsDragging(true);
-    setStartX(e.touches[0].pageX - scrollContainerRef.current.offsetLeft);
-    setScrollLeft(scrollContainerRef.current.scrollLeft);
-  };
-
-  const handleTouchMove = (e: React.TouchEvent) => {
-    if (!isDragging || !scrollContainerRef.current) return;
-    const x = e.touches[0].pageX - scrollContainerRef.current.offsetLeft;
-    const walk = (x - startX) * 2;
-    scrollContainerRef.current.scrollLeft = scrollLeft - walk;
-  };
-
-  const handleTouchEnd = () => {
-    setIsDragging(false);
-  };
-
   return (
-    <section className="bg-white py-36 diagonal-container -mt-10 relative z-25">
-      <div className="diagonal-content-reverse max-w-[1080px] mx-auto px-6 md:px-4 lg:px-0">
-        {/* Header */}
-        <div className="mb-16">
-          <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-[#101418] mb-6">
-            Use cases for IT operations
-          </h2>
-          <div className="flex flex-col md:flex-row items-center gap-6">
-            <p className="text-lg text-[#495057] flex-1">
-              From support teams to IT departments, successful organizations across industries automate operations and scale efficiently with Kernia.
-            </p>
-            <div className="flex items-center gap-1 flex-shrink-0 w-full md:w-auto">
-              <Button size={"sm"} variant={"outline"} onClick={handleScrollLeft} className="flex-1 md:flex-none">
-                <ArrowLeft className="h-4 w-4" />
-              </Button>
-              <Button size={"sm"} variant={"outline"} onClick={handleScrollRight} className="flex-1 md:flex-none">
-                <ArrowRight className="h-4 w-4" />
-              </Button>
-            </div>
+    <section className="border-b border-line bg-paper py-20 md:py-28">
+      <Shell>
+        <div className="grid gap-10 lg:grid-cols-12 lg:gap-12">
+          <div className="lg:col-span-4">
+            <SectionHead
+              index="04"
+              eyebrow="Use cases"
+              title="Use cases for IT operations"
+              body="From support teams to IT departments, successful organisations automate operations and scale without adding headcount."
+            />
           </div>
+
+          <ol className="lg:col-span-8">
+            <li className="hidden grid-cols-[48px_1fr_160px_32px] gap-6 border-b border-line pb-2 font-mono text-[9.5px] uppercase tracking-[0.12em] text-ink-mute md:grid">
+              <span>No.</span>
+              <span>Team</span>
+              <span>Focus</span>
+              <span />
+            </li>
+            {useCases.map((item, index) => (
+              <li key={item.title} className="border-b border-line">
+                <Link
+                  href="#platform"
+                  className="group grid gap-2 py-5 md:grid-cols-[48px_1fr_160px_32px] md:items-baseline md:gap-6"
+                >
+                  <span className="font-mono text-[11px] text-ink-mute">
+                    {String(index + 1).padStart(2, "0")}
+                  </span>
+                  <span>
+                    <span className="block text-[15px] font-semibold text-ink">
+                      {item.title}
+                    </span>
+                    <span className="mt-1 block max-w-[58ch] text-[13px] leading-relaxed text-ink-soft">
+                      {item.description}
+                    </span>
+                  </span>
+                  <span className="hidden font-mono text-[10px] uppercase tracking-[0.1em] text-ink-mute md:block">
+                    Playbook
+                  </span>
+                  <ArrowUpRight className="hidden h-4 w-4 text-ink-mute transition-transform group-hover:-translate-y-0.5 group-hover:translate-x-0.5 md:block" />
+                </Link>
+              </li>
+            ))}
+          </ol>
         </div>
-
-        {/* Cards Grid - Scrollable */}
-        <div
-          ref={scrollContainerRef}
-          className="flex gap-6 overflow-x-auto pb-4 cursor-grab active:cursor-grabbing [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none]"
-          onMouseDown={handleMouseDown}
-          onMouseLeave={handleMouseLeave}
-          onMouseUp={handleMouseUp}
-          onMouseMove={handleMouseMove}
-          onTouchStart={handleTouchStart}
-          onTouchMove={handleTouchMove}
-          onTouchEnd={handleTouchEnd}
-        >
-          {businessTypes.map((business, index) => (
-            <div
-              key={index}
-              className="bg-white rounded-lg border border-slate-200 shadow-sm hover:shadow-md transition-shadow p-5 sm:p-6 flex flex-col w-[280px] sm:w-[320px] flex-shrink-0"
-            >
-              {/* Top border accent */}
-              <div className="h-1 bg-gradient-to-r from-[#00b37e] to-[#4cd7f6] rounded-t-lg -mx-6 -mt-6 mb-4"></div>
-
-              {/* Title */}
-              <h3 className="text-xl font-bold text-[#101418] mb-3">
-                {business.title}
-              </h3>
-
-              {/* Description */}
-              <p className="text-[#495057] mb-6 leading-relaxed flex-grow">
-                {business.description}
-              </p>
-
-              {/* Learn more link */}
-              <Link
-                href={business.link}
-                className="text-[#00b37e] font-semibold text-sm hover:text-[#00a372] transition-colors mb-6 inline-flex items-center"
-              >
-                Learn more{" "}
-                <ChevronRight className="text-sm ml-1" />
-              </Link>
-
-              {/* Logos */}
-              <div className="flex items-center gap-6 pt-6 border-t border-slate-100">
-                {business.logos.map((logo, logoIndex) => (
-                  <div
-                    key={logoIndex}
-                    className="text-xs font-semibold text-[#495057] opacity-60"
-                  >
-                    {logo.name}
-                  </div>
-                ))}
-              </div>
-            </div>
-          ))}
-        </div>
-      </div>
+      </Shell>
     </section>
   );
 }

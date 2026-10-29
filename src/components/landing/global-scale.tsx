@@ -1,73 +1,70 @@
 "use client";
 
 import React from "react";
+import { SectionHead, Shell } from "./shell";
+
+const stats = [
+  ["500M+", "API requests per day, peaking at 13,000 requests a second."],
+  ["99.999%", "Historical uptime across Kernia services."],
+  ["10M+", "Tickets processed monthly for Kernia customers."],
+  ["200+", "Integrations and data sources via Airbyte and MCP."],
+];
+
+const regions = [
+  ["AMS", "52.37N 4.89E"],
+  ["LHR", "51.50N 0.12W"],
+  ["SIN", "1.35N 103.81E"],
+];
 
 export function GlobalScale() {
-  const stats = [
-    {
-      value: "500M+",
-      description: "API requests per day, peaking at 13,000 requests a second.",
-    },
-    {
-      value: "99.999%",
-      description: "Historical uptime for Kernia services.",
-    },
-    {
-      value: "10M+",
-      description: "tickets processed monthly across all Kernia customers.",
-    },
-    {
-      value: "200+",
-      description: "integrations and data sources supported via Airbyte and MCP.",
-    },
-  ];
-
   return (
-    <section className="bg-[#101418] py-20 sm:py-24 md:py-32 diagonal-container -mt-10 relative z-30 text-white border-t border-white/5 overflow-x-hidden">
-      <div className="diagonal-content-reverse max-w-[1080px] mx-auto px-6 md:px-4 lg:px-0">
-        <div className="grid lg:grid-cols-2 gap-8 md:gap-12 lg:gap-16 relative">
-          <div className="relative z-10">
-            <h2 className="text-[#4cd7f6] font-bold text-sm uppercase tracking-wide mb-3">
-              Global Scale
-            </h2>
-            <h3 className="text-2xl sm:text-3xl md:text-4xl font-bold tracking-tight text-white mb-4 sm:mb-6">
-              The backbone for IT operations automation.
-            </h3>
-            <p className="text-base sm:text-lg text-slate-300 mb-8 sm:mb-12 leading-relaxed">
-              Kernia makes processing tickets and automating workflows as easy and programmable as moving data. Our teams are based in offices around the world and we process millions of tickets and automation events each year for ambitious businesses of all sizes.
-            </p>
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 sm:gap-8">
-              {stats.map((stat, index) => (
-                <div key={index} className="border-l-2 border-[#00b37e] pl-3 sm:pl-4">
-                  <p className="text-xl sm:text-2xl font-bold text-white mb-1">{stat.value}</p>
-                  <p className="text-xs sm:text-sm text-slate-400">{stat.description}</p>
-                </div>
-              ))}
-            </div>
+    <section className="border-b border-line bg-white py-20 md:py-28">
+      <Shell>
+        <div className="grid gap-10 lg:grid-cols-12 lg:gap-12">
+          <div className="lg:col-span-5">
+            <SectionHead
+              index="03"
+              eyebrow="Global scale"
+              title="The backbone for IT operations automation."
+              body="Kernia processes millions of tickets and automation events a year for teams of every size, from a single site to distributed operations across regions."
+            />
           </div>
-          <div className="hidden lg:block relative h-full min-h-[400px] overflow-hidden">
-            <div className="absolute inset-0 opacity-20">
-              <div className="w-full h-full bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-white/20 via-[#101418] to-[#101418]"></div>
-              <div
-                className="absolute inset-0"
-                style={{
-                  backgroundImage: "radial-gradient(#fff 1px, transparent 1px)",
-                  backgroundSize: "40px 40px",
-                  transform: "perspective(1000px) rotateX(60deg) translateY(-100px) scale(1.2)",
-                }}
-              ></div>
-            </div>
-            <div className="absolute top-1/2 left-1/2 w-2 h-2 bg-[#4cd7f6] rounded-full shadow-[0_0_20px_#4cd7f6] animate-ping"></div>
-            <div className="absolute top-1/3 left-1/3 w-1.5 h-1.5 bg-[#00b37e] rounded-full shadow-[0_0_15px_#00b37e] animate-ping delay-75"></div>
-            <div className="absolute bottom-1/3 right-1/3 w-2 h-2 bg-emerald-500 rounded-full shadow-[0_0_20px_#00b37e] animate-ping delay-150"></div>
-            <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-64 h-64 border border-white/10 rounded-full flex items-center justify-center animate-[spin_60s_linear_infinite]">
-              <div className="w-48 h-48 border border-white/5 rounded-full"></div>
-              <div className="absolute w-full h-[1px] bg-white/10 top-1/2"></div>
-              <div className="absolute h-full w-[1px] bg-white/10 left-1/2"></div>
+
+          <div className="relative min-h-[220px] border border-line dot-field lg:col-span-7">
+            <div className="absolute inset-0 flex flex-col justify-between p-5">
+              <div className="flex items-center justify-between font-mono text-[10px] uppercase tracking-[0.12em] text-ink-mute">
+                <span>edge / regions</span>
+                <span className="text-signal-deep">operational</span>
+              </div>
+              <ul className="flex flex-wrap gap-x-10 gap-y-3">
+                {regions.map(([code, coords]) => (
+                  <li key={code} className="font-mono text-[11px] text-ink">
+                    <span className="mr-2 inline-block h-1.5 w-1.5 align-middle bg-signal" />
+                    {code}
+                    <span className="ml-2 text-[9.5px] text-ink-mute">{coords}</span>
+                  </li>
+                ))}
+              </ul>
             </div>
           </div>
         </div>
-      </div>
+
+        <dl className="mt-14 grid grid-cols-1 border-t border-line sm:grid-cols-2 lg:grid-cols-4">
+          {stats.map(([value, description], index) => (
+            <div
+              key={value}
+              className={`border-b border-line py-7 sm:pr-8 lg:border-b-0 ${index > 0 ? "lg:border-l lg:pl-8" : ""}`}
+            >
+              <dt className="font-mono text-[clamp(1.75rem,2.6vw,2.5rem)] font-semibold tracking-[-0.03em] text-ink">
+                {value}
+              </dt>
+              <dd className="mt-3 max-w-[26ch] text-[13px] leading-relaxed text-ink-soft">
+                {description}
+              </dd>
+            </div>
+          ))}
+        </dl>
+      </Shell>
     </section>
   );
 }

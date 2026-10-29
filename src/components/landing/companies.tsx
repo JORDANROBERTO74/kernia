@@ -1,39 +1,39 @@
 "use client";
 
 import React from "react";
-import { Coins, Zap, Mountain, Waves, Network, Cloud, Rocket, Gem } from "lucide-react";
+import { Shell } from "./shell";
+
+const clients = [
+  "AcmeCorp",
+  "BoltShift",
+  "Forest",
+  "WaveTech",
+  "Nexus",
+  "CloudSync",
+  "SpaceTech",
+  "Premium",
+];
 
 export function Companies() {
   return (
-    <section className="bg-[#f5f7f8] py-12 diagonal-container -mt-20 relative z-20">
-      <div className="diagonal-content-reverse max-w-[1080px] mx-auto px-6 md:px-4 lg:px-0 pt-10">
-        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 sm:gap-6 md:gap-8 items-center justify-items-center opacity-60 grayscale hover:grayscale-0 transition-all duration-500">
-          <div className="text-base sm:text-lg md:text-xl font-bold flex flex-col sm:flex-row items-center gap-1 sm:gap-2 text-[#101418]">
-            <Coins className="text-2xl sm:text-3xl" /> <span className="text-center sm:text-left">AcmeCorp</span>
-          </div>
-          <div className="text-base sm:text-lg md:text-xl font-bold flex flex-col sm:flex-row items-center gap-1 sm:gap-2 text-[#101418]">
-            <Zap className="text-2xl sm:text-3xl" /> <span className="text-center sm:text-left">BoltShift</span>
-          </div>
-          <div className="text-base sm:text-lg md:text-xl font-bold flex flex-col sm:flex-row items-center gap-1 sm:gap-2 text-[#101418]">
-            <Mountain className="text-2xl sm:text-3xl" /> <span className="text-center sm:text-left">Forest</span>
-          </div>
-          <div className="text-base sm:text-lg md:text-xl font-bold flex flex-col sm:flex-row items-center gap-1 sm:gap-2 text-[#101418]">
-            <Waves className="text-2xl sm:text-3xl" /> <span className="text-center sm:text-left">WaveTech</span>
-          </div>
-          <div className="text-base sm:text-lg md:text-xl font-bold flex flex-col sm:flex-row items-center gap-1 sm:gap-2 text-[#101418]">
-            <Network className="text-2xl sm:text-3xl" /> <span className="text-center sm:text-left">Nexus</span>
-          </div>
-          <div className="text-base sm:text-lg md:text-xl font-bold flex flex-col sm:flex-row items-center gap-1 sm:gap-2 text-[#101418]">
-            <Cloud className="text-2xl sm:text-3xl" /> <span className="text-center sm:text-left">CloudSync</span>
-          </div>
-          <div className="text-base sm:text-lg md:text-xl font-bold flex flex-col sm:flex-row items-center gap-1 sm:gap-2 text-[#101418]">
-            <Rocket className="text-2xl sm:text-3xl" /> <span className="text-center sm:text-left">SpaceTech</span>
-          </div>
-          <div className="text-base sm:text-lg md:text-xl font-bold flex flex-col sm:flex-row items-center gap-1 sm:gap-2 text-[#101418]">
-            <Gem className="text-2xl sm:text-3xl" /> <span className="text-center sm:text-left">Premium</span>
+    <section className="border-b border-line bg-paper/60">
+      <Shell>
+        <div className="grid md:grid-cols-[190px_1fr] md:items-stretch">
+          <p className="eyebrow py-5 md:flex md:items-center md:py-0">
+            Trusted by IT teams at
+          </p>
+          <div className="grid grid-cols-2 gap-px border-line bg-line sm:grid-cols-4 lg:grid-cols-8 md:border-l">
+            {clients.map((client) => (
+              <div
+                key={client}
+                className="bg-white px-3 py-4 text-center text-[13px] font-semibold tracking-tight text-ink-soft transition-colors hover:text-ink"
+              >
+                {client}
+              </div>
+            ))}
           </div>
         </div>
-      </div>
+      </Shell>
     </section>
   );
 }
